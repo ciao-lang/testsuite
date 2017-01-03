@@ -18,4 +18,14 @@ Tests here should allow measuring:
 
 **NOTE**: Do not include unit tests for particular libraries here.
 
+## Usage
+
+Clone this repository into your workspace or install with `ciao get
+testsuite`. Then run:
+```sh
+ciao test testsuite # run tests
+ciao bench testsuite # run benchmarks
+```
+The `testsuite` bundle name is optional if you execute `ciao` from the
+`testsuite` directory.
 
