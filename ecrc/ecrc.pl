@@ -389,19 +389,21 @@ generate_human_file:-
 generate_human_file.
 
 arithm_average(List, AAVG):- 
-        foldl(List, (0, 0), 
-             (_((KLips, BenchTime), (KIn, TimeIn), (KOut, TimeOut)) :- 
+        foldl((_((KIn, TimeIn), (KLips, BenchTime), (KOut, TimeOut)) :- 
                  TimeOut is TimeIn + BenchTime, 
                  KOut is KIn + BenchTime*KLips), 
-             (LipSum, TimeSum)),
+              (0, 0), 
+	      List, 
+	      (LipSum, TimeSum)),
         AAVG is LipSum / TimeSum.
 
 geom_average(List, GAVG):- 
-        foldl(List, (0, 0), 
-             (_((KLips, BenchTime), (KIn, TimeIn), (KOut, TimeOut)) :- 
+        foldl((_((KIn, TimeIn), (KLips, BenchTime), (KOut, TimeOut)) :- 
                  TimeOut is TimeIn + BenchTime, 
                  KOut is KIn + BenchTime * log(KLips)), 
-                 (LipLogProd, TimeSum)),
+              (0, 0),
+	      List,
+              (LipLogProd, TimeSum)),
         GAVG is exp(LipLogProd/TimeSum).
 
 :- pred generate_machine_file # "Print to standard output a
