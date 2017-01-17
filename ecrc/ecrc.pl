@@ -18,7 +18,7 @@
 :- use_module(library(dec10_io)).
 :- use_module(library(terms)).
 :- use_package(hiord).
-:- use_module(library(hiordlib)).
+:- use_module(library(hiordlib), [foldl/4]).
 :- use_module(library(getopts)).
 
 %% ECRC:s benchmarks from Prolog Digest 1986
