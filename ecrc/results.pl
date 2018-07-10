@@ -27,16 +27,16 @@ clean_benchmark_data:-
 
 get_general_data(Compiler, CompOptions,
                  CompVersion,
-                 Host, OS, CPU, Arch, MHZ, Date):-
+                 Hostname, OS, CPU, Arch, MHZ, Date):-
         % TODO: recover actual C compiler and options, add compiler version too
         Compiler = unknown,
 	CompOptions = unknown,
 	'$ciao_version'(_, _, _, _, _, CompVersion),
         %
         ( current_host(localhost) ->
-            process_call(path(hostname), [], [stdout(line(HostName))]),
-            atom_codes(Host, HostName)
-	; current_host(Host)
+            process_call(path(hostname), [], [stdout(line(Hostname0))]),
+            atom_codes(Hostname, Hostname0)
+	; current_host(Hostname)
         ),
         get_os(OS),
         get_arch(Arch),
