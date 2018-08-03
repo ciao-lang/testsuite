@@ -12,7 +12,7 @@
 :- use_module(library(process)).
 :- use_module(library(compiler)).
 :- use_module(library(lists)).
-:- use_module(library(file_utils)).
+:- use_module(library(streams_utils)).
 :- use_module(library(prolog_sys)).
 :- use_module(engine(internals)).
 
