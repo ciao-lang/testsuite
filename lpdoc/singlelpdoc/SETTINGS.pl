@@ -1,4 +1,4 @@
-:- module(_, [], [lpdoclib(doccfg)]).
+:- module(_, [], [doccfg]).
 
 % TODO: lpdoc all is not working for this file. The .lpdoc file is
 %       ignored unless lpdoc singlelpdoc.texic is put as target.
