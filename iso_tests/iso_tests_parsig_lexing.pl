@@ -1,6 +1,6 @@
 :- module(_, _, [dcg, iso]).
 
-:- use_module(library(streams_utils), [file_to_string/2]).
+:- use_module(library(stream_utils), [file_to_string/2]).
 :- use_module(library(toplevel_proc)).
 :- use_module(library(format), [format/2]).
 
