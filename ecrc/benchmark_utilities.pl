@@ -1,4 +1,4 @@
-:- module(benchmark_utilities, [ common_loop/5, run_bench/5 ], []).
+:- module(benchmark_utilities, [ common_loop/5, run_bench/5 ], [hiord]).
 
 :- use_module(library(prolog_sys)).
 

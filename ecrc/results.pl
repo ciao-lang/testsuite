@@ -15,6 +15,7 @@
 :- use_module(library(stream_utils)).
 :- use_module(library(prolog_sys)).
 :- use_module(engine(internals)).
+:- use_module(engine(system_info), [get_os/1, get_arch/1]).
 
 :- data section/1.        % General section name
 :- data benchmark_name/3.  % Section, Benchmark name, Goal

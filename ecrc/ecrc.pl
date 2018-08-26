@@ -11,6 +11,8 @@
         ], 
         [assertions,basicmodes,regtypes,unittestdecls]).
 
+:- use_module(engine(stream_basic)).
+:- use_module(engine(io_basic)).
 :- use_module(library(aggregates)).
 :- use_module(library(format)).
 :- use_module(library(lists)).
