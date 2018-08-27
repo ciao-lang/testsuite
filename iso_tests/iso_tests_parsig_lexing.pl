@@ -124,9 +124,9 @@ get_string_([C|T]) -->
 	get_string_(T).
 
 test(Id, Inits, Input, EOutput):-
-%	message('start ciao'),	
+%	message(user, 'start ciao'),	
 	toplevel_proc:start(TL),
-%	message('start test'),
+%	message(user, 'start test'),
 	exec_test(TL, ["use_package(iso)."|Inits], Input, Output), 
 	toplevel_proc:kill(TL),
 	compare_output(Id, Input, EOutput, Output, _).
