@@ -288,7 +288,7 @@ nrev 200  | nrev.             |       20301       |   2.5
 :- doc(bug, "The actual logical inferences each benchmark does has 
                  to be checked.").
 
-:- use_module(library(prolog_sys)).
+:- use_module(library(prolog_sys), [statistics/2]).
 :- use_module(benchmark_utilities).
 
 :- push_prolog_flag(unused_pred_warnings, no).

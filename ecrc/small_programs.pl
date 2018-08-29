@@ -101,7 +101,7 @@ nrev 200  | nrev.             |       20301       |   2.5
 	diff/1,
 	nrev/1,
         qsort/3,
-        list50/1], []).
+        list50/1], [hiord]).
 
 :- use_module(benchmark_utilities).
 
