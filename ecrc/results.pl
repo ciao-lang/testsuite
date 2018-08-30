@@ -8,6 +8,7 @@
         add_timings/5,
         get_timings/5], []).
 
+:- use_module(engine(data_facts)).
 :- use_module(library(system)).
 :- use_module(library(process)).
 :- use_module(library(compiler)).
