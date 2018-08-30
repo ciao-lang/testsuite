@@ -13,7 +13,7 @@
 :- use_module(library(compiler)).
 :- use_module(library(lists)).
 :- use_module(library(stream_utils)).
-:- use_module(library(prolog_sys), [statistics/2]).
+:- use_module(engine(runtime_control), [statistics/2]).
 :- use_module(engine(internals)).
 :- use_module(engine(system_info), [get_os/1, get_arch/1]).
 

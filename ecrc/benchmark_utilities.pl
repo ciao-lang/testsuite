@@ -1,6 +1,6 @@
 :- module(benchmark_utilities, [ common_loop/5, run_bench/5 ], [hiord]).
 
-:- use_module(library(prolog_sys), [statistics/2]).
+:- use_module(engine(runtime_control), [statistics/2]).
 
 :- use_module(results).
 
