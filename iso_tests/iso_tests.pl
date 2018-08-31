@@ -1,4 +1,4 @@
-:- module(iso_tests, _, [assertions, nativeprops, unittestdecls, iso]).
+:- module(iso_tests, _, [assertions, nativeprops, unittestdecls, iso, dynamic]).
 
 :- reexport(library(read)).
 :- reexport(library(write)).
@@ -6,9 +6,7 @@
 %:- reexport(library(iso_byte_char)).
 :- reexport(library(iso_incomplete)).
 :- reexport(library(compiler)).
-:- reexport(library(dynamic)).
-
-
+%:- reexport(library(dynamic)).
 
 :- doc(author, "Lorea Galech").
 
