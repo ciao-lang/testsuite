@@ -6,9 +6,9 @@
         add_bench/3,
         get_bench/3,
         add_timings/5,
-        get_timings/5], []).
+        get_timings/5
+   ], [datafacts]).
 
-:- use_module(engine(data_facts)).
 :- use_module(library(system)).
 :- use_module(library(process)).
 :- use_module(library(compiler)).
