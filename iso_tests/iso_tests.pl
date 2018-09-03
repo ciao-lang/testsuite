@@ -1,5 +1,6 @@
 :- module(iso_tests, _, [assertions, nativeprops, unittestdecls, iso, dynamic]).
 
+%:- reexport(library(streams)).
 :- reexport(library(read)).
 :- reexport(library(write)).
 :- reexport(library(operators)).
