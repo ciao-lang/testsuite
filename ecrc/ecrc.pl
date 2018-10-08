@@ -291,7 +291,6 @@ nrev 200  | nrev.             |       20301       |   2.5
 :- use_module(engine(runtime_control), [statistics/2]).
 :- use_module(benchmark_utilities).
 
-:- push_prolog_flag(unused_pred_warnings, no).
 :- use_module(testsuite_ecrc(boresea)).
 :- use_module(testsuite_ecrc(choice)).
 :- use_module(testsuite_ecrc(envir)).
@@ -299,7 +298,6 @@ nrev 200  | nrev.             |       20301       |   2.5
 :- use_module(testsuite_ecrc(unif)).
 :- use_module(testsuite_ecrc(deref)).
 :- use_module(testsuite_ecrc(cut)).
-:- pop_prolog_flag(unused_pred_warnings).
 :- use_module(testsuite_ecrc(small_programs)).
 
 :- use_module(testsuite_ecrc(results)).
