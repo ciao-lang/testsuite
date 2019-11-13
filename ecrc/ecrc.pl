@@ -25,7 +25,7 @@
 
 %% ECRC:s benchmarks from Prolog Digest 1986
 %% fixed and automated for industrial SICStus
-%% by Thomas Sjöland SICS 91 07 18
+%% by Thomas SjÃ¶land SICS 91 07 18
 
 %% Adapted for Ciao Prolog by MCL.  Main changes:
 %% * Syntax & modules adaptad to Ciao Prolog
