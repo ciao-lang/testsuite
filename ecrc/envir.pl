@@ -2,7 +2,7 @@
 PROLOG Digest           Thursday, 28 Aug 1986      Volume 4 : Issue 44
 
 Today's Topics:
-             Performance - Benchmarking Systems & Part II
+         Performance - Benchmarking Systems & Part II
 ----------------------------------------------------------------------
 
 Date: Tue, 22 Jul 86 07:46:55 -0100
@@ -10,11 +10,11 @@ Date: Tue, 22 Jul 86 07:46:55 -0100
 Subject: Benchmarking Prolog systems (part 2 of 3)
 
 
-         ***********************************************
-         *** BENCHMARK PROGRAMS FOR PROLOG SYSTEMS   ***
-         ***   (FINAL VERSION)                       ***
-         ***********************************************
-                       Part 2 (of 3)
+     ***********************************************
+     *** BENCHMARK PROGRAMS FOR PROLOG SYSTEMS   ***
+     ***   (FINAL VERSION)                       ***
+     ***********************************************
+                   Part 2 (of 3)
 
 
 1.3. Program to test the handling of environments  (envir).

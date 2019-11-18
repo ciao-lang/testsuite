@@ -2,7 +2,7 @@
 PROLOG Digest            Friday, 29 Aug 1986       Volume 4 : Issue 45
 
 Today's Topics:
-           Performance - Benchmarking Systems (part 3 of 3)
+       Performance - Benchmarking Systems (part 3 of 3)
 ----------------------------------------------------------------------
 
 Date: Mon, 25 Aug 86 12:15:23 -0100
@@ -10,12 +10,12 @@ From: Jean Claude Syre <unido!ecrcvax!jclaude@seismo>
 Subject: Benchmarking Prolog Systems (part 3 of 3)
 
 
-                           A Proposal for
-           ***********************************************
-           *** BENCHMARK PROGRAMS FOR PROLOG SYSTEMS   ***
-           ***            (FINAL VERSION)              ***
-           ***********************************************
-                           Part 3 (of 3)
+                       A Proposal for
+       ***********************************************
+       *** BENCHMARK PROGRAMS FOR PROLOG SYSTEMS   ***
+       ***            (FINAL VERSION)              ***
+       ***********************************************
+                       Part 3 (of 3)
 
 2. Small Prolog programs.
 
@@ -56,7 +56,7 @@ under 4.2 BSD Unix. The interpreter was C-Prolog version 1.5.
 This entire file (without mail/net headers) contains 584 lines.
 
 Name      |      Call by      |  # of Inferences  | KLips
-          |                   |  (one iteration)  | (C-Prolog)
+      |                   |  (one iteration)  | (C-Prolog)
 ----------+-------------------+-------------------+-----------
 fib       | fibonacci(1).     |        4932       |   2.0
 ----------+-------------------+-------------------+-----------
@@ -90,18 +90,18 @@ nrev 200  | nrev.             |       20301       |   2.5
 ----------+-------------------+-------------------+-----------
 -----------------------------CUT HERE------------------------- */
 :- module(small_programs, [
-        fibonacci/1,
-	map/1,
-	mham/1,
-	mutest/1,
-	qs/1,
-	qu/1,
-	query/1,
-	differen/1,
-	diff/1,
-	nrev/1,
-        qsort/3,
-        list50/1], [hiord]).
+    fibonacci/1,
+    map/1,
+    mham/1,
+    mutest/1,
+    qs/1,
+    qu/1,
+    query/1,
+    differen/1,
+    diff/1,
+    nrev/1,
+    qsort/3,
+    list50/1], [hiord]).
 
 :- use_module(benchmark_utilities).
 
@@ -117,10 +117,10 @@ el(X,[X|_L]).
 el(X,[_Y|L]):- el(X,L).
 
 list50([27,74,17,33,94,18,46,83,65,2,
-        32,53,28,85,99,47,28,82,6,11,
-        55,29,39,81,90,37,10,0,66,51,
-        7,21,85,27,31,63,75,4,95,99,
-        11,28,61,74,18,92,40,53,59,8]).
+    32,53,28,85,99,47,28,82,6,11,
+    55,29,39,81,90,37,10,0,66,51,
+    7,21,85,27,31,63,75,4,95,99,
+    11,28,61,74,18,92,40,53,59,8]).
 
 /* Fibonacci Series the slow way            */
 /* fibonacci(1) will do...                  */
@@ -130,12 +130,12 @@ fibonacci(N) :- common_loop(3, N, top_fib(15, _), 4932, fibonacci).
 top_fib(0,1).
 top_fib(1,1).
 top_fib(X,Y):- 
-        X > 1,
-        X1 is X-1,
-        X2 is X-2,
-        top_fib(X1,Y1),
-        top_fib(X2,Y2),
-        Y is Y1+Y2.
+    X > 1,
+    X1 is X-1,
+    X2 is X-2,
+    top_fib(X1,Y1),
+    top_fib(X2,Y2),
+    Y is Y1+Y2.
 
 /* ------------------------------------ */
 /* Map colouring problem                */
@@ -144,44 +144,44 @@ top_fib(X,Y):-
 map(N) :-  common_loop(3, N, map_top, 68, map).
 
 map_top:-
-        el(_X1,[b]),
-        el(X2,[r]),
-        el(X7,[g]),
-        el(X13,[w]),
-        el(X3,[b,r,g,w]),
-        not(X2=X3),
-        not(X3=X13),
-        el(X4,[b,r,g,w]),
-        not(X2=X4),
-        not(X7=X4),
-        not(X3=X4),
-        el(X5,[b,r,g,w]),
-        not(X13=X5),
-        not(X3=X5),
-        not(X4=X5),
-        el(X6,[b,r,g,w]),
-        not(X13=X6),
-        not(X5=X6),
-        el(X8,[b,r,g,w]),
-        not(X7=X8),
-        not(X13=X8),
-        el(X9,[b,r,g,w]),
-        not(X13=X9),
-        not(X4=X9),
-        not(X8=X9),
-        el(X10,[b,r,g,w]),
-        not(X4=X10),
-        not(X5=X10),
-        not(X6=X10),
-        not(X9=X10),
-        el(X11,[b,r,g,w]),
-        not(X11=X13),
-        not(X11=X10),
-        not(X11=X6),
-        el(X12,[b,r,g,w]),
-        not(X12=X13),
-        not(X12=X11),
-        not(X12=X9).
+    el(_X1,[b]),
+    el(X2,[r]),
+    el(X7,[g]),
+    el(X13,[w]),
+    el(X3,[b,r,g,w]),
+    not(X2=X3),
+    not(X3=X13),
+    el(X4,[b,r,g,w]),
+    not(X2=X4),
+    not(X7=X4),
+    not(X3=X4),
+    el(X5,[b,r,g,w]),
+    not(X13=X5),
+    not(X3=X5),
+    not(X4=X5),
+    el(X6,[b,r,g,w]),
+    not(X13=X6),
+    not(X5=X6),
+    el(X8,[b,r,g,w]),
+    not(X7=X8),
+    not(X13=X8),
+    el(X9,[b,r,g,w]),
+    not(X13=X9),
+    not(X4=X9),
+    not(X8=X9),
+    el(X10,[b,r,g,w]),
+    not(X4=X10),
+    not(X5=X10),
+    not(X6=X10),
+    not(X9=X10),
+    el(X11,[b,r,g,w]),
+    not(X11=X13),
+    not(X11=X10),
+    not(X11=X6),
+    el(X12,[b,r,g,w]),
+    not(X12=X13),
+    not(X12=X11),
+    not(X12=X9).
 
 
 /* ---------------------------------------------- */
@@ -192,26 +192,26 @@ map_top:-
 mham(N) :- common_loop(3, N, mham_top, 493824, mham).
 
 mham_top:-
-        cycle_ham([a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t],_X), 
-        fail.
+    cycle_ham([a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t],_X), 
+    fail.
 
 cycle_ham([X|Y],[X,T|L]):-
-        chain_ham([X|Y],[],[T|L]),
-        edge(T,X).
+    chain_ham([X|Y],[],[T|L]),
+    edge(T,X).
 
 chain_ham([X],L,[X|L]).
 chain_ham([X|Y],K,L):-
-        delete(Z,Y,T),
-        edge(X,Z),
-        chain_ham([Z|T],[X|K],L).
+    delete(Z,Y,T),
+    edge(X,Z),
+    chain_ham([Z|T],[X|K],L).
 
 delete(X,[X|Y],Y).
 delete(X,[U|Y],[U|Z]):-
-        delete(X,Y,Z).
+    delete(X,Y,Z).
 
 edge(X,Y):-
-        connect(X,L),
-        el(Y,L).
+    connect(X,L),
+    el(Y,L).
 
 connect(0,[1,2,3,4,5,6,7,8,9]).
 connect(1,[0,2,3,4,5,6,7,8,9]).
@@ -258,15 +258,15 @@ rules(S, R) :- rule1(S,R).
 rules(S, R) :- rule2(S,R).
 
 rule1(S,R) :-
-        append(X, [i], S),
-        append(X, [i,u], R).
+    append(X, [i], S),
+    append(X, [i,u], R).
 
 rule2([m|T], [m|R]) :- append(T, T, R).
 
 rule3([], -) :- fail.
 rule3(R, T) :-
-        append([i,i,i], S, R),
-        append([u], S, T).
+    append([i,i,i], S, R),
+    append([u], S, T).
 rule3([H|T], [H|R]) :- rule3(T, R).
 
 rule4([], -) :- fail.
@@ -277,32 +277,32 @@ theorem(_Depth, [m, i]).
 theorem(_Depth, []) :- fail.
 
 theorem(Depth, R) :-
-        Depth > 0,
-        D is Depth - 1,
-        theorem(D, S),
-        rules(S, R).
+    Depth > 0,
+    D is Depth - 1,
+    theorem(D, S),
+    rules(S, R).
 
 append([], X, X).
 append([A|B], X, [A|B1]) :-
-        append(B, X, B1).
+    append(B, X, B1).
 /* ------------------------------------  */
 /*  Quicksort of 50 element list         */
 /*                                       */
 
 qs(N) :-  
-        list50(L),
-        common_loop(3, N, qsort(L, _, []), 601, qs).
+    list50(L),
+    common_loop(3, N, qsort(L, _, []), 601, qs).
 
 qsort([X|L],R,R0) :-
-        partition(L,X,L1,L2),
-        qsort(L2,R1,R0),
-        qsort(L1,R,[X|R1]).
+    partition(L,X,L1,L2),
+    qsort(L2,R1,R0),
+    qsort(L1,R,[X|R1]).
 qsort([],R,R).
 
 partition([X|L],Y,[X|L1],L2) :- X =< Y,!,
-        partition(L,Y,L1,L2).
+    partition(L,Y,L1,L2).
 partition([X|L],Y,L1,[X|L2]) :-
-        partition(L,Y,L1,L2).
+    partition(L,Y,L1,L2).
 partition([],_,[],[]).
 
 /* ------------------------------------- */
@@ -328,42 +328,42 @@ get_solutions(Board_size, Soln) :- solve(Board_size, [], Soln).
 
 newsquare([], square(1, X)) :- snint(X).
 newsquare([square(I, J)|Rest], square(X, Y)) :-
-        X is I + 1,
-        snint(Y),
-        not(threatened(I, J, X, Y)),
-        safe(X, Y, Rest).
+    X is I + 1,
+    snint(Y),
+    not(threatened(I, J, X, Y)),
+    safe(X, Y, Rest).
 
 /*   safe checks whether square(X, Y) is threatened by any */
 /*   existing queens                                       */
 
 safe(_X, _Y, []).
 safe(X, Y, [square(I, J)|L]) :-
-        not(threatened(I, J, X, Y)),
-        safe(X, Y, L).
+    not(threatened(I, J, X, Y)),
+    safe(X, Y, L).
 
 /*    threatened checks whether squares (I, J) and (X, Y) */
 /*    threaten each other                                 */
 
 threatened(I, _J, X, _Y) :- 
-        I = X, !.
+    I = X, !.
 threatened(_I, J, _X, Y) :-
-        J = Y, !.
+    J = Y, !.
 threatened(I, J, X, Y) :-
-        U is I - J,
-        V is X - Y,
-        U = V, !.
+    U is I - J,
+    V is X - Y,
+    U = V, !.
 threatened(I, J, X, Y) :-
-        U is I + J,
-        V is X + Y,
-        U = V, !.
+    U is I + J,
+    V is X + Y,
+    U = V, !.
 
 /* solve accumulates the positions of occupied squares */
 
 solve(Bs, [square(Bs, Y)|L], [square(Bs, Y)|L]):- size(Bs).
 
 solve(Board_size, Initial, Final) :-
-        newsquare(Initial, Next),
-        solve(Board_size, [Next|Initial], Final).
+    newsquare(Initial, Next),
+    solve(Board_size, [Next|Initial], Final).
 
 /* ------------------------------------ */
 /* Query does simple database queries.  */
@@ -372,19 +372,19 @@ solve(Board_size, Initial, Final) :-
 query(N) :- common_loop(3, N, que_top, 2294, query).
 
 que_top:-
-        que(_X),
-        fail.
+    que(_X),
+    fail.
 
 que([C1,D1,C2,D2]) :-
-        density(C1,D1),
-        density(C2,D2),
-        D1>D2,
-        20*D1<21*D2.
+    density(C1,D1),
+    density(C2,D2),
+    D1>D2,
+    20*D1<21*D2.
 
 density(C,D) :-
-        pop(C,P),
-        area(C,A),
-        D is (P*100)/A.
+    pop(C,P),
+    area(C,A),
+    D is (P*100)/A.
 
 pop(china,8250).
 pop(india,5863).
@@ -446,14 +446,14 @@ area(argentina,1080).
 differen(N) :- common_loop(3, N, differen_top, 71, differen).
 
 differen_top:-
-        times10(I1),
-        d(I1,x,_D1),
-        divide10(I2),
-        d(I2,x,_D2),
-        log10(I3),
-        d(I3,x,_D3),
-        ops8(I4),
-        d(I4,x,_D4).
+    times10(I1),
+    d(I1,x,_D1),
+    divide10(I2),
+    d(I2,x,_D2),
+    log10(I3),
+    d(I3,x,_D3),
+    ops8(I4),
+    d(I4,x,_D4).
 
 d(U+V,X,DU+DV) :- !, d(U,X,DU), d(V,X,DV).
 d(U-V,X,DU-DV) :- !, d(U,X,DU), d(V,X,DV).
@@ -477,20 +477,20 @@ ops8( (x+1)*((^(x,2)+2)*(^(x,3)+3)) ).
 /*       quicksort on 50 items (difference lists)      */
 
 diff(N) :- 
-        list50(L),
-        common_loop(3, N, qdsort(L, _), 608, diff).
+    list50(L),
+    common_loop(3, N, qdsort(L, _), 608, diff).
 
 qdsort([X|L],R-R0) :-
-        dpartition(L,X,L1,L2),
-        qdsort(L1,R-[X|R1]),
-        qdsort(L2,R1-R0).
+    dpartition(L,X,L1,L2),
+    qdsort(L1,R-[X|R1]),
+    qdsort(L2,R1-R0).
 qdsort([],R0-R0).
 
 dpartition([X|L],Y,[X|L1],L2) :-
-        X<Y, !,
-        dpartition(L,Y,L1,L2).
+    X<Y, !,
+    dpartition(L,Y,L1,L2).
 dpartition([X|L],Y,L1,[X|L2]) :-
-        dpartition(L,Y,L1,L2).
+    dpartition(L,Y,L1,L2).
 dpartition([],_,[],[]).
 
 /* -------------------------------------------------- */
@@ -498,27 +498,27 @@ dpartition([],_,[],[]).
 
 
 nrev(N) :- 
-        Len = 30,
-        LIs = (Len * (Len + 3))/2 + 1,
-        conslist(Len, List),
-        common_loop(3, N, nreverse(List, _), LIs, nrev).
+    Len = 30,
+    LIs = (Len * (Len + 3))/2 + 1,
+    conslist(Len, List),
+    common_loop(3, N, nreverse(List, _), LIs, nrev).
 
 
 nreverse([], []).
 nreverse([X|L0],L) :- 
-        nreverse(L0, L1),
-        concatenate(L1, [X], L).
+    nreverse(L0, L1),
+    concatenate(L1, [X], L).
 
 concatenate([], L, L).
 concatenate([X|L1], L2, [X|L3]) :- concatenate(L1, L2, L3).
 
 conslist(0, []).
 conslist(N, [N|L]) :-
-        N > 0,
-        N1 is N-1,
-        conslist(N1, L).
+    N > 0,
+    N1 is N-1,
+    conslist(N1, L).
 /*
-        3. Real Prolog programs.
+    3. Real Prolog programs.
 
 This section is empty for now. We would like to have your advice
 and/or your programs, with comments on how significant they are to be

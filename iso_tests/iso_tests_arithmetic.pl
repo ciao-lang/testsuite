@@ -232,7 +232,7 @@ arithmetic_comparison_test18 :- '=<'(3*2, 7 -1).
 
 %test 19 
 :- test arithmetic_comparison_test19(X)
-	+ exception(error(instantiation_error, Imp_dep))
+    + exception(error(instantiation_error, Imp_dep))
 #
 
 "ISO standard test. This test checks that the predicate '=:='/2
@@ -242,7 +242,7 @@ arithmetic_comparison_test19(X) :- '=:='(X, 5).
 
 %test 20 
 :- test arithmetic_comparison_test20(X)
-	+ exception(error(instantiation_error, Imp_dep))
+    + exception(error(instantiation_error, Imp_dep))
 #
 "ISO standard test. This test checks that the predicate '=\='/2
 behaves according to the ISO standard.".
@@ -251,7 +251,7 @@ arithmetic_comparison_test20(X) :- '=\\='(X, 5).
 
 %test 21 
 :- test arithmetic_comparison_test21(X)
-	+ exception(error(instantiation_error, Imp_dep))
+    + exception(error(instantiation_error, Imp_dep))
 #
 
 "ISO standard test. This test checks that the predicate '<'/2 behaves
@@ -261,7 +261,7 @@ arithmetic_comparison_test21(X) :- '<'(X, 5).
 
 %test 22 
 :- test arithmetic_comparison_test22(X)
-	+ exception(error(instantiation_error, Imp_dep))
+    + exception(error(instantiation_error, Imp_dep))
 #
 
 "ISO standard test. This test checks that the predicate '>'/2 behaves
@@ -271,7 +271,7 @@ arithmetic_comparison_test22(X) :- '>'(X, 5).
 
 %test 23 
 :- test arithmetic_comparison_test23(X)
-	+ exception(error(instantiation_error, Imp_dep))
+    + exception(error(instantiation_error, Imp_dep))
 #
 
 "ISO standard test. This test checks that the predicate '>='/2 behaves
@@ -281,7 +281,7 @@ arithmetic_comparison_test23(X) :- '>='(X, 5).
 
 %test 24 
 :- test arithmetic_comparison_test24(X)
-	+ exception(error(instantiation_error, Imp_dep))
+    + exception(error(instantiation_error, Imp_dep))
 #
 
 "ISO standard test. This test checks that the predicate '=<'/2 behaves

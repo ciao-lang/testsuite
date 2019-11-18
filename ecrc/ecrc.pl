@@ -1,15 +1,15 @@
 :- module(ecrc, 
-        [
-            main/1,
-	    benchmark_usage/1,
-            just_benchmarks/0,
-            generate_human_file/0,
-            generate_machine_file/0,
-            send_info_to_developers/0,
-            arithm_average/2,
-            geom_average/2
-        ], 
-        [assertions,basicmodes,regtypes,unittestdecls]).
+    [
+        main/1,
+        benchmark_usage/1,
+        just_benchmarks/0,
+        generate_human_file/0,
+        generate_machine_file/0,
+        send_info_to_developers/0,
+        arithm_average/2,
+        geom_average/2
+    ], 
+    [assertions,basicmodes,regtypes,unittestdecls]).
 
 :- use_module(engine(stream_basic)).
 :- use_module(engine(io_basic)).
@@ -247,7 +247,7 @@ This entire file (without mail/net headers) contains 584 lines.
 
 @begin{verbatim}
 Name      |      Call by      |  # of Inferences  | KLips
-          |                   |  (one iteration)  | (C-Prolog)
+      |                   |  (one iteration)  | (C-Prolog)
 ----------+-------------------+-------------------+-----------
 fib       | fibonacci(1).     |        4932       |   2.0
 ----------+-------------------+-------------------+-----------
@@ -286,7 +286,7 @@ nrev 200  | nrev.             |       20301       |   2.5
 :- doc(filetype, module).
 
 :- doc(bug, "The actual logical inferences each benchmark does has 
-                 to be checked.").
+             to be checked.").
 
 :- use_module(engine(runtime_control), [statistics/2]).
 :- use_module(benchmark_utilities).
@@ -313,33 +313,33 @@ available to other programs through the @pred{dump_benchmark_data/0}
 and @pred{access_benchmark_data/8} predicates.".
 
 main(Args):-
-        getopts(Args, [ 'estimation', 'no-human', 'no-machine', 
-                        'send-info', 'base-file-name'/1], _, Rest),
+    getopts(Args, [ 'estimation', 'no-human', 'no-machine', 
+                    'send-info', 'base-file-name'/1], _, Rest),
        ( 
-           Rest \== [] ->
-           format("Unknown options: ~w~n", Rest),
-           fail
+       Rest \== [] ->
+       format("Unknown options: ~w~n", Rest),
+       fail
    ;
-           getopts(Args, [estimation], Estim, Args0),
-           (Estim = [_] -> estimate_time(Ti, Est, BenchElaps); true),
-           just_benchmarks,
-           (
-               getopts(Args0, ['base-file-name'/1], 
-                      ['base-file-name'(FName)], Args1) ->
-               atom_concat(FName, '.txt', FNameHuman),
-               atom_concat(FName, '.pl', FNameProlog)
-           ;
-               FNameProlog = user_output, 
-               FNameHuman = user_output,
-               Args1 = Args0
-           ),
-           ( cl_option(Args1, 'no-human') -> 
-             true ; tell(FNameHuman), generate_human_file, told ),
-           ( cl_option(Args1, 'no-machine') ->
-             true ; tell(FNameProlog), generate_machine_file, told ),
-           ( cl_option(Args1, 'send-info') ->
-              send_info_to_developers ; true),
-           (Estim = [_] -> recalibrate(Ti, Est, BenchElaps) ; true)
+       getopts(Args, [estimation], Estim, Args0),
+       (Estim = [_] -> estimate_time(Ti, Est, BenchElaps); true),
+       just_benchmarks,
+       (
+           getopts(Args0, ['base-file-name'/1], 
+                  ['base-file-name'(FName)], Args1) ->
+           atom_concat(FName, '.txt', FNameHuman),
+           atom_concat(FName, '.pl', FNameProlog)
+       ;
+           FNameProlog = user_output, 
+           FNameHuman = user_output,
+           Args1 = Args0
+       ),
+       ( cl_option(Args1, 'no-human') -> 
+         true ; tell(FNameHuman), generate_human_file, told ),
+       ( cl_option(Args1, 'no-machine') ->
+         true ; tell(FNameProlog), generate_machine_file, told ),
+       ( cl_option(Args1, 'send-info') ->
+          send_info_to_developers ; true),
+       (Estim = [_] -> recalibrate(Ti, Est, BenchElaps) ; true)
        ).
 
 :- pred generate_human_file # "Print to standard output a
@@ -347,10 +347,10 @@ human-readable report of the information gathered by running
 @pred{just_benchmarks/0}.".
 
 generate_human_file:-
-        get_general_data(Compiler, CompOptions, 
-                         CompVersion,
-                         Host, OS, CPU, Arch, MHz, Date),
-        format("
+    get_general_data(Compiler, CompOptions, 
+                     CompVersion,
+                     Host, OS, CPU, Arch, MHz, Date),
+    format("
 C Compiler:       ~w
 Compiler options: ~w
 Compiler version: ~w
@@ -360,19 +360,19 @@ CPU:              ~w
 Architecture:     ~w
 MHZ:              ~w
 Date:             ~w~n", 
-        [Compiler, CompOptions, 
-         CompVersion,
-         Host, OS, CPU, Arch, MHz, Date]),
-        get_section(Section),
-          format("~n~w~n", [Section]),
-          format("=====================================~n", []),
-          get_bench(Section, BenchmarkDesc, EntryPoint),
-            format("[~w]~n", [BenchmarkDesc]),
-            get_timings(EntryPoint, OT, ELT, BT, KLIPS),
-              format("  Overall / Empty / Benchmark: ~5f / ~5f / ~5f~n", 
-                     [OT,ELT,BT]),
-              format("  KLIPS:   ~5f~n", [KLIPS]),
-        fail.
+    [Compiler, CompOptions, 
+     CompVersion,
+     Host, OS, CPU, Arch, MHz, Date]),
+    get_section(Section),
+      format("~n~w~n", [Section]),
+      format("=====================================~n", []),
+      get_bench(Section, BenchmarkDesc, EntryPoint),
+        format("[~w]~n", [BenchmarkDesc]),
+        get_timings(EntryPoint, OT, ELT, BT, KLIPS),
+          format("  Overall / Empty / Benchmark: ~5f / ~5f / ~5f~n", 
+                 [OT,ELT,BT]),
+          format("  KLIPS:   ~5f~n", [KLIPS]),
+    fail.
 
 
 %% Average KLIPS: we have per-benchmark KLIPS stored, but we cannot
@@ -380,31 +380,31 @@ Date:             ~w~n",
 %% benchmark. 
 
 generate_human_file:-
-        findall((KLSP, Time), get_timings(_,_,_, Time, KLSP), AllTimings),
-        arithm_average(AllTimings, AAVG),
-        format("~nArithmetical average KLIPS: ~5f~n", AAVG),
-        geom_average(AllTimings, GAVG),
-        format("~nGeometrical average KLIPS: ~5f~n", GAVG),
-        fail.
+    findall((KLSP, Time), get_timings(_,_,_, Time, KLSP), AllTimings),
+    arithm_average(AllTimings, AAVG),
+    format("~nArithmetical average KLIPS: ~5f~n", AAVG),
+    geom_average(AllTimings, GAVG),
+    format("~nGeometrical average KLIPS: ~5f~n", GAVG),
+    fail.
 generate_human_file.
 
 arithm_average(List, AAVG):- 
-        foldl((_((KLips, BenchTime), (KIn, TimeIn), (KOut, TimeOut)) :- 
-                 TimeOut is TimeIn + BenchTime, 
-                 KOut is KIn + BenchTime*KLips), 
-	      List, 
-              (0, 0), 
-	      (LipSum, TimeSum)),
-        AAVG is LipSum / TimeSum.
+    foldl((_((KLips, BenchTime), (KIn, TimeIn), (KOut, TimeOut)) :- 
+             TimeOut is TimeIn + BenchTime, 
+             KOut is KIn + BenchTime*KLips), 
+          List, 
+          (0, 0), 
+          (LipSum, TimeSum)),
+    AAVG is LipSum / TimeSum.
 
 geom_average(List, GAVG):- 
-        foldl((_((KLips, BenchTime), (KIn, TimeIn), (KOut, TimeOut)) :- 
-                 TimeOut is TimeIn + BenchTime, 
-                 KOut is KIn + BenchTime * log(KLips)), 
-	      List,
-              (0, 0),
-              (LipLogProd, TimeSum)),
-        GAVG is exp(LipLogProd/TimeSum).
+    foldl((_((KLips, BenchTime), (KIn, TimeIn), (KOut, TimeOut)) :- 
+             TimeOut is TimeIn + BenchTime, 
+             KOut is KIn + BenchTime * log(KLips)), 
+          List,
+          (0, 0),
+          (LipLogProd, TimeSum)),
+    GAVG is exp(LipLogProd/TimeSum).
 
 :- pred generate_machine_file # "Print to standard output a
 machine-readable report of the information gathered by running
@@ -412,26 +412,26 @@ machine-readable report of the information gathered by running
 
 
 generate_machine_file:-
-        format("~n~n%~70c~n",[0'-]),
-        get_general_data(Compiler, CompOptions, 
-                         CompVersion,
-                         Host, OS, CPU, Arch, MHz, Data),
-        show(general_data(Compiler, CompOptions, 
-                          CompVersion,
-                          Host, OS, CPU, Arch, MHz, Data)),
-        get_section(A), show(section(A)), fail.
+    format("~n~n%~70c~n",[0'-]),
+    get_general_data(Compiler, CompOptions, 
+                     CompVersion,
+                     Host, OS, CPU, Arch, MHz, Data),
+    show(general_data(Compiler, CompOptions, 
+                      CompVersion,
+                      Host, OS, CPU, Arch, MHz, Data)),
+    get_section(A), show(section(A)), fail.
 generate_machine_file:-
-        get_bench(A,B,C), show(benchmark(A,B,C)), fail.
+    get_bench(A,B,C), show(benchmark(A,B,C)), fail.
 generate_machine_file:-
-        get_timings(A,B,C,D,E), show(timing(A,B,C,D,E)), fail.
+    get_timings(A,B,C,D,E), show(timing(A,B,C,D,E)), fail.
 generate_machine_file:-
-        format("~n~n%~70c~n",[0'-]).
+    format("~n~n%~70c~n",[0'-]).
 
 show(Term):-
-        displayq(Term),
-        display(.),
-        nl.
-        
+    displayq(Term),
+    display(.),
+    nl.
+    
 
 mail_to('mcarro@clip.dia.fi.upm.es').
 
@@ -441,29 +441,29 @@ developers with a report of the information gathered by running
 
 
 send_info_to_developers:-
-        (
-            member(MailProgram, 
-               ['/bin/mail', '/usr/bin/mail', '/sbin/mail', '/usr/sbin/mail']),
-            file_exists(MailProgram, 1) ->
-            mktemp_in_tmp('ecrcXXXXXX', Filename),
-            tell(Filename),
-            generate_human_file,
-            format("~n~n%----------------------------------------------~n~n",
-                   []),
-            generate_machine_file,
-            told,
-            mail_to(Dest),
-            atom_concat([MailProgram, 
-                         ' -s "Ciao performance information" ', 
-                         Dest, ' < ', Filename],
-                        MailCommand),
-            system(MailCommand)
-        ;
-            format(user_error,
-            "Tried to send info to developers, but no mail program found!~n",
-            [])
-        ).
-            
+    (
+        member(MailProgram, 
+           ['/bin/mail', '/usr/bin/mail', '/sbin/mail', '/usr/sbin/mail']),
+        file_exists(MailProgram, 1) ->
+        mktemp_in_tmp('ecrcXXXXXX', Filename),
+        tell(Filename),
+        generate_human_file,
+        format("~n~n%----------------------------------------------~n~n",
+               []),
+        generate_machine_file,
+        told,
+        mail_to(Dest),
+        atom_concat([MailProgram, 
+                     ' -s "Ciao performance information" ', 
+                     Dest, ' < ', Filename],
+                    MailCommand),
+        system(MailCommand)
+    ;
+        format(user_error,
+        "Tried to send info to developers, but no mail program found!~n",
+        [])
+    ).
+        
 
 
 % This estimation is a rough one.  If it is _too_ rough, it asks the
@@ -481,48 +481,48 @@ calibration_time(1.88).
 total_time(228.78).
 
 estimate_time(InitialSec, Estimation, ElapsedSec):-
-        format(user_error, "Estimating total benchmarking time... ", []),
-        flush_output(user_error),
-        run_calibration,               % Warm up cache, raise processor speed
-        run_calibration,               % Warm up cache, raise processor speed
-        statistics(walltime, [InitialMS, _]),
-        InitialSec is InitialMS / 1000,
-        run_calibration,
-        run_calibration,
-        statistics(walltime, [AfterMS, _]),
-        AfterSec is AfterMS / 1000,
-        ElapsedSec is AfterSec - InitialSec,
-        total_time(OtherEstimation),
-        calibration_time(Calib),
-        Estimation is OtherEstimation*ElapsedSec/Calib,
-        format(user_error, " ~f seconds.~n", [Estimation]),
-        flush_output(user_error).
-        
+    format(user_error, "Estimating total benchmarking time... ", []),
+    flush_output(user_error),
+    run_calibration,               % Warm up cache, raise processor speed
+    run_calibration,               % Warm up cache, raise processor speed
+    statistics(walltime, [InitialMS, _]),
+    InitialSec is InitialMS / 1000,
+    run_calibration,
+    run_calibration,
+    statistics(walltime, [AfterMS, _]),
+    AfterSec is AfterMS / 1000,
+    ElapsedSec is AfterSec - InitialSec,
+    total_time(OtherEstimation),
+    calibration_time(Calib),
+    Estimation is OtherEstimation*ElapsedSec/Calib,
+    format(user_error, " ~f seconds.~n", [Estimation]),
+    flush_output(user_error).
+    
 
 run_calibration:-
-        list50(List),
-        append(List, List, List2),
-        append(List2, List2, List4),
-        append(List4, List4, List8),
-        run_bench(1000, qsort(List8, _, []), 0, 0, no),
-        fail.
+    list50(List),
+    append(List, List, List2),
+    append(List2, List2, List4),
+    append(List4, List4, List8),
+    run_bench(1000, qsort(List8, _, []), 0, 0, no),
+    fail.
 run_calibration.
 
 allowed_error(0.1).
 
 recalibrate(InitialSec, Estimation, BenchElapsed):-
-        statistics(walltime, [ActualEndMS, _]),
+    statistics(walltime, [ActualEndMS, _]),
 %        display(final(ActualEndMS)), nl,
-        ActualEndSec is ActualEndMS / 1000,
-        ActualElapsedSec is ActualEndSec - InitialSec,
-        allowed_error(RelErr),
-        (
-            Estimation * RelErr > abs(ActualElapsedSec - Estimation) ->
-            true
-        ;
-            format(user_error, 
-                   "~n~n~nExcessive (> ~f) estimation error~n", [RelErr]),
-            format(user_error, "
+    ActualEndSec is ActualEndMS / 1000,
+    ActualElapsedSec is ActualEndSec - InitialSec,
+    allowed_error(RelErr),
+    (
+        Estimation * RelErr > abs(ActualElapsedSec - Estimation) ->
+        true
+    ;
+        format(user_error, 
+               "~n~n~nExcessive (> ~f) estimation error~n", [RelErr]),
+        format(user_error, "
 Suggestion: update the benchmark sources using
 
 calibration_time(~f).
@@ -580,61 +580,61 @@ using the predicates @pred{generate_machine_file/0} or
 @pred{generate_human_file/0}.".
 
 just_benchmarks :- 
-        clean_benchmark_data,
+    clean_benchmark_data,
  (
-        perform_test('Measure LIPS using simple calls',
-                     ['Chained calls to 0-arity clauses'-boresea(200000)])
+    perform_test('Measure LIPS using simple calls',
+                 ['Chained calls to 0-arity clauses'-boresea(200000)])
  ;
-        perform_test('Choice point manipulation',
-        [
-            'Choice points'-choice_point(600000),
-            'Zero-arity choice points'-choice_point0ar(1000000),
-            'Deep backtracking'-baktrak1(500000),
-            'Shallow backtracking'-baktrak2(1000000)
-        ])
+    perform_test('Choice point manipulation',
+    [
+        'Choice points'-choice_point(600000),
+        'Zero-arity choice points'-choice_point0ar(1000000),
+        'Deep backtracking'-baktrak1(500000),
+        'Shallow backtracking'-baktrak2(1000000)
+    ])
  ;
-        perform_test('Environments',
-        [
-            'Environment creation'-envir(100000),
-            'Empty environment creation'-envir0ar(200000)
-        ])
+    perform_test('Environments',
+    [
+        'Environment creation'-envir(100000),
+        'Empty environment creation'-envir0ar(200000)
+    ])
  ;
-        perform_test('Indexing', 
-        [
-            'Call clauses with different indexing properties'-index(500000)
-        ])
+    perform_test('Indexing', 
+    [
+        'Call clauses with different indexing properties'-index(500000)
+    ])
  ;
 
-        perform_test('Unification benchmarks',
-        [
-            'List construction'-construct_list(100000),
-            'List matching'-match_list(100000),
-            'Structure construction'-construct_structure(100000),
-            'Structure matching'-match_structure(100000),
-            'Nested structure matching'-match_nested_structure(500000),
-            'Unification of complex structures'-general_unification(200000)
-        ])
+    perform_test('Unification benchmarks',
+    [
+        'List construction'-construct_list(100000),
+        'List matching'-match_list(100000),
+        'Structure construction'-construct_structure(100000),
+        'Structure matching'-match_structure(100000),
+        'Nested structure matching'-match_nested_structure(500000),
+        'Unification of complex structures'-general_unification(200000)
+    ])
  ;
-        perform_test('Measuring efficiency of dereferencing', 
-                     ['Dereferencing'-deref(50000)])
+    perform_test('Measuring efficiency of dereferencing', 
+                 ['Dereferencing'-deref(50000)])
  ;
-        perform_test('Measuring efficiency of cut', 
-        [
-            'Cut on the second clause of a 3-clause predicate'-cuttest(100000)
-        ])
+    perform_test('Measuring efficiency of cut', 
+    [
+        'Cut on the second clause of a 3-clause predicate'-cuttest(100000)
+    ])
  ;
-        perform_test('Assorted small programs',
-        [
-            'Fibonacci'-fibonacci(3000),
-            'Map colouring'-map(1600),
-            'Hamiltonian paths'-mham(20),
-            'MU theorem'-mutest(10000),
-            'Quicksort'-qs(30000),
-            '4-Queens'-qu(1500),
-            'Querying a database'-query(4000),
-            'Symbolic differentiation'-differen(100000),
-            'Difference lists'-diff(30000),
-            'Naive reverse'-nrev(40000)
+    perform_test('Assorted small programs',
+    [
+        'Fibonacci'-fibonacci(3000),
+        'Map colouring'-map(1600),
+        'Hamiltonian paths'-mham(20),
+        'MU theorem'-mutest(10000),
+        'Quicksort'-qs(30000),
+        '4-Queens'-qu(1500),
+        'Querying a database'-query(4000),
+        'Symbolic differentiation'-differen(100000),
+        'Difference lists'-diff(30000),
+        'Naive reverse'-nrev(40000)
        ])
  ).
 
@@ -643,16 +643,16 @@ just_benchmarks.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 perform_test(Name, Calls):-
-        add_section(Name),
-        do_calls(Calls, Name),
-        fail.
+    add_section(Name),
+    do_calls(Calls, Name),
+    fail.
 
 
 do_calls([], _Section).
 do_calls([Explanation-C|Cs], Section):- !,
-        functor(C, GoalName, _),
-        add_bench(Section, Explanation, GoalName),
-        call(C),
-        do_calls(Cs, Section).
+    functor(C, GoalName, _),
+    add_bench(Section, Explanation, GoalName),
+    call(C),
+    do_calls(Cs, Section).
 
 

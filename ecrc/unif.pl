@@ -10,13 +10,13 @@ a little, and the "print_times" predicate to print results.
 ----------cut here - beginning of program listing-----------------
 */
 :- module(unif, [
-        construct_list/1,
-	match_list/1,
-	construct_structure/1,
-	match_structure/1,
-	match_nested_structure/1,
-	general_unification/1
-                 ], []).
+    construct_list/1,
+    match_list/1,
+    construct_structure/1,
+    match_structure/1,
+    match_nested_structure/1,
+    general_unification/1
+             ], []).
 
 :- use_module(benchmark_utilities).
 
@@ -43,8 +43,8 @@ construct_list(X):- common_loop(3, X, cl1(_,_,_), 100, construct_list).
 /* results for Cprolog: N=100  */
 /* Tloop=4.56 Tcomp=0.1 Tnet=4.46 Klips=2.2  */
 match_list(X) :-
-        list100(Z),
-        common_loop(3, X, cl1(Z,Z,Z), 100, match_list).
+    list100(Z),
+    common_loop(3, X, cl1(Z,Z,Z), 100, match_list).
 
 
 /*  Test of structure construction via unification      */
@@ -56,7 +56,7 @@ match_list(X) :-
 /* results for Cprolog: N=100                           */
 /* Tloop=2.56 Tcomp=0.08 Tnet=2.48 Klips=4              */
 construct_structure(X):- 
-        common_loop(3, X, cs1(_,_,_), 100, construct_structure).
+    common_loop(3, X, cs1(_,_,_), 100, construct_structure).
 
 
 /*  Test of structure matching via unification    */
@@ -66,8 +66,8 @@ construct_structure(X):-
 /* results for Cprolog: N=100                     */
 /* Tloop=4.66 Tcomp=0.1 Tnet=4.56 Klips=2.2       */
 match_structure(X):- 
-        structure100(Z),
-        common_loop(3, X, cs1(Z,Z,Z), 100, match_structure).
+    structure100(Z),
+    common_loop(3, X, cs1(Z,Z,Z), 100, match_structure).
 
 /*  Test to match a nested structure               */
 /* this predicate tests the (compiled) unification */
@@ -76,8 +76,8 @@ match_structure(X):-
 /* results for Cprolog: N=200                      */
 /* Tloop=1.34 Tcomp=0.17 Tnet=1.18 Klips=0.17      */
 match_nested_structure(X):-
-        nested_structure1(Z),
-        common_loop(3, X, nested_structure1(Z), 1, match_nested_structure).
+    nested_structure1(Z),
+    common_loop(3, X, nested_structure1(Z), 1, match_nested_structure).
 
 
 /*     Test of general unification of 2 complex structures     */
@@ -100,9 +100,9 @@ match_nested_structure(X):-
 /* results for Cprolog: N=200  */
 /* Tloop=1.38 Tcomp=0.18 Tnet=1.20 Klips=0.17  */
 general_unification(X) :-
-        nested_structure1(A),
-        nested_structure2(B),
-        common_loop(3, X, unify(A, B), 1, general_unification).
+    nested_structure1(A),
+    nested_structure2(B),
+    common_loop(3, X, unify(A, B), 1, general_unification).
 
 /* general unification */
 unify(X,X).
@@ -138,25 +138,25 @@ nested_structure2(
 
 /* list of 100 elements used for match_list */
 list100([a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,
-           a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,
-           a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,
-           a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]).
+       a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,
+       a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,
+       a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]).
 
 /* structure of 100 elements used for match_structure   */
 structure100(st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
-             st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
-             st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
-             st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
-             st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
-             st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
-             st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
-             st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
-             st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
-             st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
-             st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
-             st(a,nil)))))))))))))))))))))))))))))))))
-             ))))))))))))))))))))))))))))
-             )))))))))))))))))))))))))))))))))))))))).
+         st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
+         st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
+         st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
+         st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
+         st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
+         st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
+         st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
+         st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
+         st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
+         st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,st(a,
+         st(a,nil)))))))))))))))))))))))))))))))))
+         ))))))))))))))))))))))))))))
+         )))))))))))))))))))))))))))))))))))))))).
 
 /* predicates to test unification of lists */
 cl1([a|X],[a|Y],[a|Z]) :- cl2(X,Y,Z).

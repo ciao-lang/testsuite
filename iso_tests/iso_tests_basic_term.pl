@@ -23,7 +23,7 @@ unify_test1:- '='(1, 1).
 
 %test 2
 :- test unify_test2(X)
-	=> (X=1)
+    => (X=1)
 #
 
 "ISO standard test. This test checks that the predicate =/2 behaves
@@ -33,7 +33,7 @@ unify_test2(X) :- '='(X, 1).
 
 %test 3
 :- test unify_test3(X, Y)
-	=> (X=Y)
+    => (X=Y)
 #
 
 "ISO standard test. This test checks that the predicate =/2 behaves
@@ -213,8 +213,8 @@ unify_occurs_test4 :- unify_with_occurs_check(_, _).
 unify_with_occurs_check/2 behaves according to the ISO standard.".
 
 unify_occurs_test5(X, Y) :-
-	unify_with_occurs_check(X, Y),
-	unify_with_occurs_check(X, abc).
+    unify_with_occurs_check(X, Y),
+    unify_with_occurs_check(X, abc).
 
 %test 6
 :- test unify_occurs_test6(X, Y) => (X=def, Y=def)
@@ -269,7 +269,7 @@ unify_occurs_test10 :- unify_with_occurs_check(f(X, 1), f(a(X))).
 unify_with_occurs_check/2 behaves according to the ISO standard.".
 
 unify_occurs_test11 :-
-	unify_with_occurs_check(f(X, Y, X), f(a(X), a(Y), Y, 2)).
+    unify_with_occurs_check(f(X, Y, X), f(a(X), a(Y), Y, 2)).
 
 %test 12
 :- test unify_occurs_test12 + fails
@@ -288,7 +288,7 @@ unify_occurs_test12 :- unify_with_occurs_check(X, a(X)).
 unify_with_occurs_check/2 behaves according to the ISO standard.".
 
 unify_occurs_test13 :-
-	unify_with_occurs_check(f(X, 1), f(a(X), 2)).
+    unify_with_occurs_check(f(X, 1), f(a(X), 2)).
 
 %test 14
 :- test unify_occurs_test14 + fails
@@ -316,7 +316,7 @@ unify_occurs_test15 :- unify_with_occurs_check(f(1, X), f(2, a(X))).
 unify_with_occurs_check/2 behaves according to the ISO standard.".
 
 unify_occurs_test16 :-
-	unify_with_occurs_check(f(X, Y, X, 1), f(a(X), a(Y), Y, 2)).
+    unify_with_occurs_check(f(X, Y, X, 1), f(a(X), a(Y), Y, 2)).
 
 
 %% 8.2.3.4 These tests are specified in page 67 of the ISO standard. %%%%
@@ -1177,7 +1177,7 @@ functor_test11 :- functor([], [], 0).
 
 %test 12 
 :- test functor_test12(X, Y)
-	+ exception(error(instantiation_error, Imp_dep))
+    + exception(error(instantiation_error, Imp_dep))
 #
 
 "ISO standard test. This test checks that the predicate functor/3
@@ -1187,7 +1187,7 @@ functor_test12(X, Y) :- functor(X, Y, 3).
 
 %test 13 
 :- test functor_test13(X, N)
-	+ exception(error(instantiation_error, Imp_dep))
+    + exception(error(instantiation_error, Imp_dep))
 #
 
 "ISO standard test. This test checks that the predicate functor/3
@@ -1197,7 +1197,7 @@ functor_test13(X, N) :- functor(X, foo, N).
 
 %test 14
 :- test functor_test14(X)
-	+ exception(error(type_error(integer, a), Imp_dep))
+    + exception(error(type_error(integer, a), Imp_dep))
 #
 
 "ISO standard test. This test checks that the predicate functor/3
@@ -1207,7 +1207,7 @@ functor_test14(X) :- functor(X, foo, a).
 
 %test 15 
 :- test functor_test15(X)
-	+ exception(error(type_error(atom, 1.5), Imp_dep))
+    + exception(error(type_error(atom, 1.5), Imp_dep))
 #
 
 "ISO standard test. This test checks that the predicate functor/3
@@ -1217,7 +1217,7 @@ functor_test15(X) :- functor(X, 1.5, 1).
 
 %test 16 
 :- test functor_test16(X)
-	+ exception(error(type_error(atomic, foo(a)), Imp_dep))
+    + exception(error(type_error(atomic, foo(a)), Imp_dep))
 #
 
 "ISO standard test. This test checks that the predicate functor/3
@@ -1227,8 +1227,8 @@ functor_test16(X) :- functor(X, foo(a), 1).
 
 %test 17 
 :- test functor_test17(T, X) :
-	(current_prolog_flag(max_arity, A), X is A +1)
-	+ exception(error(representation_error(max_arity), Imp_dep))
+    (current_prolog_flag(max_arity, A), X is A +1)
+    + exception(error(representation_error(max_arity), Imp_dep))
 #
 
 "ISO standard test. This test checks that the predicate functor/3
@@ -1238,8 +1238,8 @@ functor_test17(T, X) :- functor(T, foo, X).
 
 %test 18 
 :- test functor_test18(F, Minus_1) :
-	(Minus_1 is (0 -1))
-	+ exception(error(domain_error(not_less_than_zero, -1), Imp_dep))
+    (Minus_1 is (0 -1))
+    + exception(error(domain_error(not_less_than_zero, -1), Imp_dep))
 #
 
 "ISO standard test. This test checks that the predicate functor/3
@@ -1335,7 +1335,7 @@ argument_test9(X) :- arg(1, X, a).
 
 %test 10  
 :- test argument_test10(A)
-	+ exception(error(type_error(compound, atom), Imp_dep))
+    + exception(error(type_error(compound, atom), Imp_dep))
 #
 
 "ISO standard test. This test checks that the predicate arg/3 behaves
@@ -1369,7 +1369,7 @@ argument_test12(X) :- arg(1, foo(X), u(X)).
 
 %test 13
 :- test argument_test13
-	+ exception(error(domain_error(not_less_than_zero, -3), Imp_dep))
+    + exception(error(domain_error(not_less_than_zero, -3), Imp_dep))
 #
 
 "Non ISO standard test. This test checks that the predicate arg/3
@@ -1379,7 +1379,7 @@ argument_test13 :- arg(-3, foo(a, b), _).
 
 % test 14 
 :- test argument_test14(X)
-	+ exception(error(type_error(integer, a), Imp_dep))
+    + exception(error(type_error(integer, a), Imp_dep))
 #
 
 "Non ISO standard test. This test checks that the predicate arg/3
@@ -1563,7 +1563,7 @@ univ_test16(X) :- '=..'(X, [f(a)]).
 
 %test 17
 :- test univ_test17(X)
-	+ exception(error(domain_error(non_empty_list, []), Imp_dep))
+    + exception(error(domain_error(non_empty_list, []), Imp_dep))
 #
 
 "Non ISO standard test. This test checks that the predicate '=..'/2
@@ -1573,10 +1573,10 @@ univ_test17(X) :- '=..'(X, []).
 
 %test 18 
 :- test univ_test18(X, L) :
-	( current_prolog_flag(max_arity, MAX),
-	    N is (MAX+1),
-	    my_list_of(N, 1, L)
-	) + exception(error(representation_error(max_arity), Imp_dep))
+    ( current_prolog_flag(max_arity, MAX),
+        N is (MAX+1),
+        my_list_of(N, 1, L)
+    ) + exception(error(representation_error(max_arity), Imp_dep))
 #
 
 "Non ISO standard test. This test checks that the predicate '=..'/2

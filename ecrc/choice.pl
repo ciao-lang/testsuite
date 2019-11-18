@@ -22,11 +22,11 @@ System is.
 */
 
 :- module(choice,
-	[choice_point/1,
-	 choice_point0ar/1,
-	 baktrak1/1,
-	 baktrak2/1],
-         []).
+    [choice_point/1,
+     choice_point0ar/1,
+     baktrak1/1,
+     baktrak2/1],
+     []).
 
 :- use_module(benchmark_utilities).
 

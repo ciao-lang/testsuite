@@ -21,32 +21,32 @@
 /*-------------------CUT HERE (BEGINNING OF PROGRAM)-----------*/
 
 deref(N):-
-        make_list(500, L1, _),
-        make_list(500, L2, Last),
-        bind_forward(L1),
-        bind_backward(L2),
-        L2 = [a|_],
-        common_loop(3, N, bind_refs(L1, Last), 24, deref).
+    make_list(500, L1, _),
+    make_list(500, L2, Last),
+    bind_forward(L1),
+    bind_backward(L2),
+    L2 = [a|_],
+    common_loop(3, N, bind_refs(L1, Last), 24, deref).
 
 /*
  * Bind repeatively a cons cell to another one.
  */
 
 bind_refs(First, Last):-
-        ref(First),
-        ref(Last).
+    ref(First),
+    ref(Last).
 
 ref(Cons) :-
-        Cons = [a|_],
-        Cons = [a|_],
-        Cons = [a|_],
-        Cons = [a|_],
-        Cons = [a|_],
-        Cons = [a|_],
-        Cons = [a|_],
-        Cons = [a|_],
-        Cons = [a|_],
-        Cons = [a|_].
+    Cons = [a|_],
+    Cons = [a|_],
+    Cons = [a|_],
+    Cons = [a|_],
+    Cons = [a|_],
+    Cons = [a|_],
+    Cons = [a|_],
+    Cons = [a|_],
+    Cons = [a|_],
+    Cons = [a|_].
 
 /*
  * Create a variable chain if in ?- equal(X, Y) the system binds
@@ -54,8 +54,8 @@ ref(Cons) :-
  */
 bind_forward([a]) :- !.
 bind_forward([X, Y|T]) :-
-        equal(X, Y),
-        bind_forward([Y|T]).
+    equal(X, Y),
+    bind_forward([Y|T]).
 
 /*
  * Create a variable chain if in ?- equal(X, Y) the system binds
@@ -63,8 +63,8 @@ bind_forward([X, Y|T]) :-
  */
 bind_backward([_X]) :- !.
 bind_backward([X, Y|T]) :-
-        bind_backward([Y|T]),
-        equal(X, Y).
+    bind_backward([Y|T]),
+    equal(X, Y).
 
 equal(X, X).
 
@@ -74,7 +74,7 @@ equal(X, X).
  */
 make_list(1, L, L) :- L = [_X].
 make_list(N, [_X|Rest], Last) :-
-        N > 1,
-        N1 is N - 1,
-        make_list(N1, Rest, Last).
+    N > 1,
+    N1 is N - 1,
+    make_list(N1, Rest, Last).
 /* ----------------CUT HERE (END OF PROGRAM)------------------ */
