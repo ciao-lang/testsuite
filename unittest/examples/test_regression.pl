@@ -16,8 +16,8 @@ print_stdout(X) :-
     display(X), nl.
 
 :- pred p(X) : print_stdout(calling(X)) => print_stdout(succeeded(X)).
-:- test p(X) : (X=f(_)) + not_fails.
-p(X) :- display(running(X)), X=f(a), nl.
+:- test p(X) : (X=a) + not_fails.
+p(X) :- display(running(X)), nl.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Error regression %%%%
@@ -29,8 +29,8 @@ print_stderr(X) :-
     display(user_error, X), nl(user_error).
 
 :- pred q(X) : print_stderr(calling(X)) => print_stderr(succeeded(X)).
-:- test q(X) : (X=f(_)) + not_fails.
-q(X) :- display(user_error,running(X)), X=f(a), nl(user_error).
+:- test q(X) : (X=b) + not_fails.
+q(X) :- display(user_error,running(X)), nl(user_error).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
