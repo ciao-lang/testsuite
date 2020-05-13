@@ -1,0 +1,2 @@
+test_attributes_db('ceval1#20#22',ceval1,ceval,2,['A'=A,'B'=B],[],::(ceval(A,B),=>([]:[A=c(3,4)+c(1,2)-c(2,3)],[B=c(2,3)]+[not_fails(ceval(A,B)),is_det(ceval(A,B))]#[])),loc('testsuite/unittest/examples/ceval1.pl',20,22)).
+test_attributes_db('ceval1#23#25',ceval1,ceval,2,['A'=A,'B'=B],[],::(ceval(A,B),=>([]:[A=c(3,4)*c(1,2)/c(1,2)],[B=c(3.0,4.0)]+[not_fails(ceval(A,B)),is_det(ceval(A,B))]#[])),loc('testsuite/unittest/examples/ceval1.pl',23,25)).

@@ -1,0 +1,8 @@
+test_attributes_db('length#11#12',length,length,2,['X'=A,'Y'=B],[],::(length(A,B),=>([]:[A=[1,2,3],B=3],[]+[not_fails(length(A,B))]#[])),loc('testsuite/unittest/examples/length.pl',11,12)).
+test_attributes_db('length#13#13',length,length,2,['X'=A,'Y'=B],[],::(length(A,B),=>([]:[A=[a,b,c,d,e],B=5],[]+[not_fails(length(A,B))]#[])),loc('testsuite/unittest/examples/length.pl',13,13)).
+test_attributes_db('length#14#14',length,length,2,['X'=A,'Y'=B],[],::(length(A,B),=>([]:[A=[],B=0],[]+[not_fails(length(A,B))]#[])),loc('testsuite/unittest/examples/length.pl',14,14)).
+test_attributes_db('length#15#15',length,length,2,['X'=A,'Y'=B],[],::(length(A,B),=>([]:[A=[a,b,c,d,e],B=5],[]+[not_fails(length(A,B))]#[])),loc('testsuite/unittest/examples/length.pl',15,15)).
+test_attributes_db('length#16#16',length,length,2,['X'=A,'Y'=B],[],::(length(A,B),=>([]:[A=[a,b,c],B=5],[]+[fails(length(A,B))]#[])),loc('testsuite/unittest/examples/length.pl',16,16)).
+test_attributes_db('length#17#17',length,length,2,['X'=A,'Y'=B],[],::(length(A,B),=>([]:[A=[a,b,c,d],B=5],[]+[fails(length(A,B))]#[])),loc('testsuite/unittest/examples/length.pl',17,17)).
+test_attributes_db('length#18#18',length,concat,3,['A'=A,'B'=B,'C'=C],[],::(concat(A,B,C),=>([]:[A=[1,2],B=[3],C=[1,2,3]],[]+[not_fails(concat(A,B,C))]#[])),loc('testsuite/unittest/examples/length.pl',18,18)).
+test_attributes_db('length#19#20',length,concat,3,['A'=A,'B'=B,'C'=C],[],::(concat(A,B,C),=>([]:[A=[1,2],B=[3],var(C)],[C=[1,2,3]]+[not_fails(concat(A,B,C))]#[])),loc('testsuite/unittest/examples/length.pl',19,20)).
