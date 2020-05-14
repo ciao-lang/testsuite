@@ -6,6 +6,7 @@
 :- doc(module, "ISO standard tests for Ciao for unifcation, type
 testings, term comparison and term creation/decomposition.").
 
+:- reexport(engine(runtime_control)).
 
 :- use_module(testsuite_iso_tests(iso_tests_common), []).
 :- reexport(testsuite_iso_tests(iso_tests_common)).

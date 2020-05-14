@@ -10,6 +10,8 @@
 
 :- reexport(testsuite_iso_tests(iso_tests_common)).
 :- reexport(library(read)).
+:- reexport(library(streams)).
+:- reexport(engine(runtime_control)).
 
 %% 6.3.3.1 These tests are specified in page 17 of the ISO standard. %%%%
 
