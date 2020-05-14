@@ -1,10 +1,12 @@
 :- module(iso_tests, _, [assertions, nativeprops, unittestdecls, iso, dynamic]).
 
-%:- reexport(library(streams)).
+% TODO: rewrite with use test modules?
+:- reexport(engine(runtime_control)).
+:- reexport(library(streams)).
 :- reexport(library(read)).
 :- reexport(library(write)).
 :- reexport(library(operators)).
-%:- reexport(library(iso_byte_char)).
+:- reexport(library(iso_char)).
 :- reexport(library(iso_incomplete)).
 :- reexport(library(compiler)).
 %:- reexport(library(dynamic)).
@@ -12,6 +14,8 @@
 :- doc(author, "Lorea Galech").
 
 :- doc(module, "ISO standard tests for Ciao").
+
+%:- compilation_fact(fixed_utf8). % TODO: Enable when UTF8 support is completed
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % The following predicates are not implemented, but here a dummy
@@ -6258,7 +6262,7 @@ atomlength_test8 :- atom_length(atom, -4).
 atom_length/2 behaves according to the ISO standard. The test succeeds
 in Ciao.".
 
-atomlength_test9(L) :- atom_length('Bartók Béla', L).
+atomlength_test9(L) :- atom_length('BartÃ³k BÃ©la', L).
 
 
 %% 8.16.2.4 These tests are specified in page 107 of the ISO standard. %%
@@ -6368,39 +6372,40 @@ expected to raise an error in Ciao.".
 atomconcat_test10 :- atom_concat(_T1, _T2, f(a)).
 
 %test11
-:- test atomconcat_test11(S) => (S='Bartók Béla')
+:- test atomconcat_test11(S) => (S='BartÃ³k BÃ©la')
 #
 
 "Non ISO standard test. This test checks that the predicate
 atom_concat/2 behaves according to the ISO standard. The test succeeds
 in Ciao.".
 
-atomconcat_test11(S) :- atom_concat('Bartók ', 'Béla', S).
+atomconcat_test11(S) :- atom_concat('BartÃ³k ', 'BÃ©la', S).
 
 %test12
-:- test atomconcat_test12(T1) => (T1='Bartók ')
+:- test atomconcat_test12(T1) => (T1='BartÃ³k ')
 #
 
 "Non ISO standard test. This test checks that the predicate
 atom_concat/2 behaves according to the ISO standard. The test succeeds
 in Ciao.".
 
-atomconcat_test12(T1) :- atom_concat(T1, 'Béla', 'Bartók Béla').
+atomconcat_test12(T1) :- atom_concat(T1, 'BÃ©la', 'BartÃ³k BÃ©la').
 
 %test13
-:- test atomconcat_test13(T2) => (T2='Béla')
+:- test atomconcat_test13(T2) => (T2='BÃ©la')
 #
 
 "Non ISO standard test. This test checks that the predicate
 atom_concat/2 behaves according to the ISO standard. The test succeeds
 in Ciao.".
 
-atomconcat_test13(T2) :- atom_concat('Bartók ', T2, 'Bartók Béla').
+atomconcat_test13(T2) :- atom_concat('BartÃ³k ', T2, 'BartÃ³k BÃ©la').
 
+:- if(defined(fixed_utf8)).
 %test14 
 :- test atomconcat_test14(Result)
-	=> ( Result=[['', 'Pécs'], ['P', 'écs'], ['Pé', 'cs'], ['Péc', 's'],
-		['Pécs', '']] )
+	=> ( Result=[['', 'PÃ©cs'], ['P', 'Ã©cs'], ['PÃ©', 'cs'], ['PÃ©c', 's'],
+		['PÃ©cs', '']] )
 #
 
 "Non ISO standard test. This test checks that the predicate
@@ -6408,7 +6413,8 @@ atom_concat/2 behaves according to the ISO standard. The test succeeds
 in Ciao.".
 
 atomconcat_test14(Result) :-
-	findall([T1, T2], atom_concat(T1, T2, 'Pécs'), Result).
+	findall([T1, T2], atom_concat(T1, T2, 'PÃ©cs'), Result).
+:- endif.
 
 %% 8.16.3.4 These tests are specified in page 108 of the ISO standard. %%
 
@@ -6693,42 +6699,44 @@ Ciao.".
 subatom_test28 :- sub_atom('Banana', 0, 0, 7, _S).
 
 %test 31
-:- test subatom_test31(Z, S) => (Z=5, S='ók')
+:- test subatom_test31(Z, S) => (Z=5, S='Ã³k')
 #
 
 "Non ISO standard test. This test checks that the predicate sub_atom/5
 behaves according to the ISO standard. The test succeeds in Ciao.".
 
-subatom_test31(Z, S) :- sub_atom('Bartók Béla', 4, 2, Z, S).
+subatom_test31(Z, S) :- sub_atom('BartÃ³k BÃ©la', 4, 2, Z, S).
 
 %test 32 
-:- test subatom_test32(Y, S) => (Y=2, S='ók')
+:- test subatom_test32(Y, S) => (Y=2, S='Ã³k')
 #
 
 "Non ISO standard test. This test checks that the predicate sub_atom/5
 behaves according to the ISO standard. The test succeeds in Ciao.".
 
-subatom_test32(Y, S) :- sub_atom('Bartók Béla', 4, Y, 5, S).
+subatom_test32(Y, S) :- sub_atom('BartÃ³k BÃ©la', 4, Y, 5, S).
 
 %test 33 
-:- test subatom_test33(X, S) => (X=4, S='ók')
+:- test subatom_test33(X, S) => (X=4, S='Ã³k')
 #
 
 "Non ISO standard test. This test checks that the predicate sub_atom/5
 behaves according to the ISO standard. The test succeeds in Ciao.".
 
-subatom_test33(X, S) :- sub_atom('Bartók Béla', X, 2, 5, S).
+subatom_test33(X, S) :- sub_atom('BartÃ³k BÃ©la', X, 2, 5, S).
 
+:- if(defined(fixed_utf8)).
 %test 34 
 :- test subatom_test34(Result)
-	=> (Result=[[0, 2, 'Pé'], [1, 1, 'éc'], [2, 0, 'cs']])
+	=> (Result=[[0, 2, 'PÃ©'], [1, 1, 'Ã©c'], [2, 0, 'cs']])
 #
 
 "Non ISO standard test. This test checks that the predicate sub_atom/5
 behaves according to the ISO standard. The test succeeds in Ciao.".
 
-subatom_test34(Result) :- findall([X, Z, S], sub_atom('Pécs', X, 2, Z, S),
+subatom_test34(Result) :- findall([X, Z, S], sub_atom('PÃ©cs', X, 2, Z, S),
 	    Result).
+:- endif.
 
 %test 35
 :- test subatom_test35(Result) => (Result=[[0, 4, 7], [7, 4, 0]])
@@ -6874,25 +6882,29 @@ format specified by the ISO standard.".
 
 atomchars_test13 :- atom_chars(_A, [a, f(b)]).
 
+:- if(defined(fixed_utf8)).
 %test 14 
-:- test atomchars_test14(L) => (L=['P', 'é', 'c', 's'])
+:- test atomchars_test14(L) => (L=['P', 'Ã©', 'c', 's'])
 #
 
 "Non ISO standard test. This test checks that the predicate
 atom_chars/2 behaves according to the ISO standard. The test is
 expected to succeed but raises an error.".
 
-atomchars_test14(L) :- atom_chars('Pécs', L).
+atomchars_test14(L) :- atom_chars('PÃ©cs', L).
+:- endif.
 
+:- if(defined(fixed_utf8)).
 %test 15 
-:- test atomchars_test15(A) => (A='Pécs')
+:- test atomchars_test15(A) => (A='PÃ©cs')
 #
 
 "Non ISO standard test. This test checks that the predicate
 atom_chars/2 behaves according to the ISO standard. This is expected to
 succeed but fails.".
 
-atomchars_test15(A) :- atom_chars(A, ['P', 'é', 'c', 's']).
+atomchars_test15(A) :- atom_chars(A, ['P', 'Ã©', 'c', 's']).
+:- endif.
 
 
 
@@ -7061,12 +7073,12 @@ standard.".
 atomcodes_test11 :- atom_codes(_X, [0'i, 0's, -1]).
 
 %test 12 
-%:- test atomcodes_test12(L) => (L=[0'P,0'é,0'c,0's]).  
-%atomcodes_test12(L) :- atom_codes('Pécs',L).
+%:- test atomcodes_test12(L) => (L=[0'P,0'Ã©,0'c,0's]).  
+%atomcodes_test12(L) :- atom_codes('PÃ©cs',L).
 
 %test 13 
-%:- test atomcodes_test13(A) => (A='Pécs').
-%atomcodes_test13(A) :- atom_codes(A,[0'P,0'é,0'c,0's]).
+%:- test atomcodes_test13(A) => (A='PÃ©cs').
+%atomcodes_test13(A) :- atom_codes(A,[0'P,0'Ã©,0'c,0's]).
 
 %test 16 
 :- test atomcodes_test16
@@ -7431,7 +7443,7 @@ numberchars_test24 :- number_chars(_A, [' ', 'x', 'g']).
 number_chars/2 behaves according to the ISO standard. The test is
 expected to raise an error but it just fails in Ciao.".
 
-numberchars_test25 :- number_chars(_A, ['á']).
+numberchars_test25 :- number_chars(_A, ['Ã¡']).
 
 %test 26 
 :- test numberchars_test26
@@ -7715,7 +7727,7 @@ numbercodes_test19(A, S) :-
 number_codes/2 behaves according to the ISO standard. The test is
 expected to raise an error but succeeds.".
 
-numbercodes_test20 :- number_codes(_X, "ä").
+numbercodes_test20 :- number_codes(_X, "Ã¤").
 
 %test 21 
 :- test numbercodes_test21
