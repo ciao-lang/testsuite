@@ -5,7 +5,6 @@ depends([
   ciaodbg
 ]).
 alias_paths([
-  testsuite_iso_tests = iso_tests,
   testsuite_ecrc = ecrc,
   testsuite_actmod = actmod
 ]).

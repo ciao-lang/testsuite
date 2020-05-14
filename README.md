@@ -12,11 +12,11 @@ Tests here should allow measuring:
  - performance (time, memory consumption) of the engine, runtime,
    libraries, compiler and analysis
 
- - conformance with standards
-
  - comparison with other languages and Prolog implementations
 
 **NOTE**: Do not include unit tests for particular libraries here.
+
+**NOTE**: See the `iso_tests` bundle for a ISO standard testsuite
 
 ## Usage
 

@@ -3,9 +3,8 @@
 :- use_module(ciaobld(ciaoc_aux), [runtests_dir/2]).
 
 '$builder_hook'(test) :- !,
-    % Run ISO-prolog tests
-    % TODO: acceptance tests?
-    runtests_dir(testsuite, 'iso_tests').
+    % TODO: connect with individual tests
+    true.
 
 :- use_module(ciaobld(ciaoc_aux), [
     % TODO: use bundle defs instead
