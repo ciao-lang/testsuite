@@ -51,14 +51,14 @@ run_tests_in_benchmarks(Opts, Actions) :-
 % that dumps standard output from .testout files, and tests
 % effectively that code if the benchmarks provide enough coverage
 :- test run_tests_in_benchmarks(Opts, Actions)
-   : (Opts=[], Actions=[dump_saved_output])
+   : (Opts=[], Actions=[show_saved_stdout])
    # "Test saved standard output dump".
 
 % Regression on this test can only fail because of changes in the code
 % that dumps standard error from .testout files, and tests effectively
 % that code if the benchmarks provide enough coverage
 :- test run_tests_in_benchmarks(Opts, Actions)
-   : (Opts=[], Actions=[dump_saved_error])
+   : (Opts=[], Actions=[show_saved_stderr])
    # "Test saved standard error dump".
 
 % Provided previous tests passed (and good coverage from benchmarks),
