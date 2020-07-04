@@ -1,0 +1,58 @@
+regr_name=lpdoc
+
+alltests="ciao ciaopp_ref_man ciaopp_doc lpdoc ciaotest singlelpdoc"
+
+function test_opts() {
+    manual_infile="SETTINGS.pl"
+
+    # This is a hack... it has the version number hardwired.
+    case $1 in
+        ciao) manual_outfile="ciao-1.15.0" ;;
+        ciaopp_ref_man) manual_outfile="ciaopp-1.2.0" ;;
+        ciaopp_doc) manual_outfile="ciaopp_internals-1.2.0" ;;
+        lpdoc) manual_outfile="lpdoc-3.0.0" ;;
+        # for testing
+        ciaotest) manual_outfile="ciaotest" ;;
+        singlelpdoc) manual_outfile="singlelpdoc" ;;
+        *) manual_outfile=""
+    esac
+    case $1 in
+        ciao) manual_dir="$ciaoroot/core" ;;
+        ciaopp_ref_man) manual_dir="$ciaoroot/bndls/ciaopp" ;;
+        ciaopp_doc) manual_dir="$ciaoroot/bndls/ciaopp" ;;
+        lpdoc) manual_dir="$ciaoroot/bndls/lpdoc" ;;
+        # for testing
+        ciaotest) manual_dir="$ciaoroot/bndls/testsuite/lpdoc/ciaotest" ;;
+        singlelpdoc) manual_dir="$ciaoroot/bndls/testsuite/lpdoc/singlelpdoc" ;;
+        *) manual_dir=""
+    esac
+    case $1 in
+        ciao) manual_outdir="$builddir_doc" ;;
+        ciaopp_ref_man) manual_outdir="$builddir_doc" ;;
+        ciaopp_doc) manual_outdir="$builddir_doc" ;;
+        lpdoc) manual_outdir="$builddir_doc" ;;
+        # for testing
+        ciaotest) manual_outdir="$ciaoroot/bndls/testsuite/lpdoc/ciaotest" ;;
+        singlelpdoc) manual_outdir="$ciaoroot/bndls/testsuite/lpdoc/singlelpdoc" ;;
+        *) manual_outdir=""
+    esac
+    case $1 in
+        ciao) manual_cmd="ciao build --docs alldocs" ;;
+        ciaopp_ref_man) manual_cmd="ciao build --docs ciaopp" ;;
+        ciaopp_doc) manual_cmd="ciao build --docs ciaopp" ;;
+        lpdoc) manual_cmd="ciao build --docs lpdoc" ;;
+        # for testing
+        ciaotest) manual_cmd="lpdoc --output_dir=$manual_outdir -t all $manual_infile"
+            ;;
+        singlelpdoc) manual_cmd="\
+lpdoc --output_dir=$manual_outdir -t texi $manual_infile && \
+lpdoc --output_dir=$manual_outdir -t html $manual_infile && \
+echo > singlelpdoc.infoindex && \
+echo > singlelpdoc.info && \
+echo > singlelpdoc.pdf && \
+echo > singlelpdoc.dvi && \
+echo > singlelpdoc.manl"
+            ;;
+        *) manual_cmd=""
+    esac
+}
