@@ -6,7 +6,7 @@
 doc_structure := 'singlelpdoc'.
 
 doc_mainopts := no_patches.
-doc_compopts := no_isoline|no_engmods|propmods|no_changelog.
+doc_compopts := no_isoline|no_engmods|propmods|no_changelog|no_bugs.
 
 %docformat := texi. % html or others are not working
 docformat := pdf|manl|info|html.
