@@ -1,6 +1,6 @@
 :- bundle(testsuite).
 % A testsuite for Ciao
-version('1.21.0').
+version('1.21.0'). % (same as 'core')
 depends([
   ciaodbg
 ]).
