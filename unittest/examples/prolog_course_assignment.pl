@@ -1,6 +1,6 @@
 % :- module(_, _, [assertions, doccomments]).
-:- module(_, _, [assertions, doccomments, 'bf/bfall']).
-% :- use_package('bf/bfall').
+:- module(_, _, [assertions, doccomments, sr/bfall]).
+% :- use_package(sr/bfall).
 
 % TODO: translate to english
 
