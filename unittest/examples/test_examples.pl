@@ -20,7 +20,7 @@
 % ----------------------------------------------------------------------
 % tests only with preconditions
 
-:- test p(A) : (A = c)
+:- test p(A) : (A = c) %+ (possible_exceptions([_]))
     # "test should pass".
 :- test p(A) : (A = d, A = a)
     # "test should fail (precondition)".
@@ -38,7 +38,7 @@
     # "test should pass".
 :- test p(A) : (A = c) + exception(error(c, _))
     # "test should pass".
-:- test p(A) : (A = c) + fails
+:- test p(A) : (A = c) + (fails, no_exception)
     # "test should fail".
 :- test p(A) : (A = c) + not_fails
     # "test should fail".

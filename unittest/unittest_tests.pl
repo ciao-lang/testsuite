@@ -1,15 +1,5 @@
 :- module(_,_,[assertions]).
 
-% To run tests, follow steps below:
-
-% ?- use_module(library(unittest)).
-% ?- run_tests_in_module(unittest_tests, [check, briefcompare]).
-
-% If there are differences, follow steps below:
-
-% ?- use_module(library(unittest)).
-% ?- run_tests_in_module(unittest_tests, [compare]).
-
 
 :- use_module(library(bundle/bundle_paths), [bundle_path/3]).
 :- use_module(library(unittest), [run_tests/3]).

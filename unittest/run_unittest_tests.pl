@@ -5,7 +5,8 @@
 
 main(_) :- % run from this module's directory
     run_tests(unittest_tests, [], [check, briefcompare(Result)]),
-    (Result=0 -> true ;
-        run_tests(unittest_tests, [], [compare]),
-        halt(1)
+    ( Result=0 ->
+        true 
+    ; run_tests(unittest_tests, [], [compare]),
+      halt(1)
     ).
