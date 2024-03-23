@@ -41,14 +41,14 @@ run_tests_in_benchmarks(Opts, Actions) :-
 % that dumps standard output from .testout files, and tests
 % effectively that code if the benchmarks provide enough coverage
 :- test run_tests_in_benchmarks(Opts, Actions)
-   : (Opts=[], Actions=[show_saved_stdout])
+   : (Opts=[], Actions=[saved_vers, show_stdout])
    # "Test saved standard output dump".
 
 % Regression on this test can only fail because of changes in the code
 % that dumps standard error from .testout files, and tests effectively
 % that code if the benchmarks provide enough coverage
 :- test run_tests_in_benchmarks(Opts, Actions)
-   : (Opts=[], Actions=[show_saved_stderr])
+   : (Opts=[], Actions=[saved_vers, show_stderr])
    # "Test saved standard error dump".
 
 % Provided previous tests passed (and good coverage from benchmarks),
@@ -76,14 +76,14 @@ run_tests_in_benchmarks(Opts, Actions) :-
 % that shows test results from .testout files, and tests effectively
 % that code if the benchmarks provide enough coverage
 :- test run_tests_in_benchmarks(Opts, Actions)
-   : (Opts=[], Actions=[show_saved_output])
+   : (Opts=[], Actions=[saved_vers, show_output])
    # "Test showing saved test results".
 
 % Regression on this test can only fail because of changes in the code
 % that shows test statistics from .testout files, and tests
 % effectively that code if the benchmarks provide enough coverage
 :- test run_tests_in_benchmarks(Opts, Actions)
-   : (Opts=[], Actions=[show_saved_stats])
+   : (Opts=[], Actions=[saved_vers, show_stats])
    # "Test showing saved test stats".
 
 % Provided previous tests passed (and good coverage from benchmarks),
