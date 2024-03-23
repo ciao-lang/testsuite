@@ -1,2 +1,2 @@
-test_attributes_db('ceval2#20#24',ceval2,ceval,2,['A'=A,'B'=B],[],::(ceval(A,B),=>([]:[A=cm(3,4)+cm(1,2)-cm(2,3)],[B=cm(2,3)]+[not_fails(ceval(A,B)),is_det(ceval(A,B))]#[])),loc('testsuite/unittest/examples/ceval2.pl',20,24)).
-test_attributes_db('ceval2#25#28',ceval2,ceval,2,['A'=A,'B'=B],[],::(ceval(A,B),=>([]:[A=cm(3,4)*cm(1,2)/cm(1,2)],[B=cm(3.0,4.0)]+[]#[])),loc('testsuite/unittest/examples/ceval2.pl',25,28)).
+test_db('ceval2#20#24',ceval2,ceval,2,['A'=A,'B'=B],[],::(ceval(A,B),=>([]:[A=cm(3,4)+cm(1,2)-cm(2,3)],[B=cm(2,3)]+[not_fails(ceval(A,B)),is_det(ceval(A,B))]#[])),loc('testsuite/unittest/examples/ceval2.pl',20,24)).
+test_db('ceval2#25#28',ceval2,ceval,2,['A'=A,'B'=B],[],::(ceval(A,B),=>([]:[A=cm(3,4)*cm(1,2)/cm(1,2)],[B=cm(3.0,4.0)]+[]#[])),loc('testsuite/unittest/examples/ceval2.pl',25,28)).

@@ -1,5 +1,5 @@
-test_attributes_db('relationships#34#36',relationships,fsb,2,['A'=A,'B'=B],[],::(fsb(A,B),=>([]:[A=juan,B=marcela],[]+[not_fails(fsb(A,B))]#[])),loc('testsuite/unittest/examples/relationships.pl',34,36)).
-test_attributes_db('relationships#37#37',relationships,fsb,2,['A'=A,'B'=B],[],::(fsb(A,B),=>([]:[A=pedro,B=pedro],[]+[not_fails(fsb(A,B))]#[])),loc('testsuite/unittest/examples/relationships.pl',37,37)).
-test_attributes_db('relationships#38#38',relationships,fsb,2,['A'=A,'B'=B],[],::(fsb(A,B),=>([]:[A=debora,B=carlos],[]+[fails(fsb(A,B))]#[])),loc('testsuite/unittest/examples/relationships.pl',38,38)).
-test_attributes_db('relationships#39#39',relationships,fsb,2,['A'=A,'B'=B],[],::(fsb(A,B),=>([]:[A=debora,B=nadie],[]+[not_fails(fsb(A,B))]#[])),loc('testsuite/unittest/examples/relationships.pl',39,39)).
-test_attributes_db('relationships#40#40',relationships,brother,2,['A'=A,'B'=B],[],::(brother(A,B),=>([]:[A=debora,B=carlos],[]+[not_fails(brother(A,B))]#[])),loc('testsuite/unittest/examples/relationships.pl',40,40)).
+test_db('relationships#34#36',relationships,fsb,2,['A'=A,'B'=B],[],::(fsb(A,B),=>([]:[A=juan,B=marcela],[]+[not_fails(fsb(A,B))]#[])),loc('testsuite/unittest/examples/relationships.pl',34,36)).
+test_db('relationships#37#37',relationships,fsb,2,['A'=A,'B'=B],[],::(fsb(A,B),=>([]:[A=pedro,B=pedro],[]+[not_fails(fsb(A,B))]#[])),loc('testsuite/unittest/examples/relationships.pl',37,37)).
+test_db('relationships#38#38',relationships,fsb,2,['A'=A,'B'=B],[],::(fsb(A,B),=>([]:[A=debora,B=carlos],[]+[fails(fsb(A,B))]#[])),loc('testsuite/unittest/examples/relationships.pl',38,38)).
+test_db('relationships#39#39',relationships,fsb,2,['A'=A,'B'=B],[],::(fsb(A,B),=>([]:[A=debora,B=nadie],[]+[not_fails(fsb(A,B))]#[])),loc('testsuite/unittest/examples/relationships.pl',39,39)).
+test_db('relationships#40#40',relationships,brother,2,['A'=A,'B'=B],[],::(brother(A,B),=>([]:[A=debora,B=carlos],[]+[not_fails(brother(A,B))]#[])),loc('testsuite/unittest/examples/relationships.pl',40,40)).
