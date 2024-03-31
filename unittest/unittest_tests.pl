@@ -1,6 +1,5 @@
 :- module(_,_,[assertions]).
 
-
 :- use_module(library(bundle/bundle_paths), [bundle_path/3]).
 :- use_module(library(unittest), [run_tests/3]).
 :- use_module(library(regrtest/regrtest_aux),[clean_output/3]).
@@ -14,7 +13,7 @@ run_tests_in_benchmarks(Opts, Actions) :-
         run_tests(AbsDir, [dir_rec|Opts], Actions)
         ],
     process_call(path(ciaosh),
-                 [],
+                 ['-q', '-f'],
                  [stdin(terms(Queries)),
                   stderr(stdout),
                   stdout(string(Out))
@@ -25,78 +24,26 @@ run_tests_in_benchmarks(Opts, Actions) :-
 % TODO: more coverage, both in tests in this module and in benchmarks
 % in examples/
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 % Testing unittest interface: all predicates are based on run_tests/3
 % (tested below) and are really simple. No tests for now
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Testing standard error and standard output dumps:
-
 % Regression on this test can only fail because of changes in the code
-% that dumps standard output from .testout files, and tests
-% effectively that code if the benchmarks provide enough coverage
+% that dumps saved tests results.
 :- test run_tests_in_benchmarks(Opts, Actions)
-   : (Opts=[], Actions=[saved_vers, show_stdout])
-   # "Test saved standard output dump".
-
-% Regression on this test can only fail because of changes in the code
-% that dumps standard error from .testout files, and tests effectively
-% that code if the benchmarks provide enough coverage
-:- test run_tests_in_benchmarks(Opts, Actions)
-   : (Opts=[], Actions=[saved_vers, show_stderr])
-   # "Test saved standard error dump".
+   : (Opts=[], Actions=[saved_vers, show_results])
+   # "Test showing saved results".
 
 % Provided previous tests passed (and good coverage from benchmarks),
 % regression of this test can only fail because of changes in the code
-% that saves tests' standard output to .testout files, and tests
-% effectively that code if the benchmarks provide enough coverage
+% that saves tests results, and tests effectively that code if the
+% benchmarks provide enough coverage.
 :- test run_tests_in_benchmarks(Opts, Actions)
-   : (Opts=[dump_output], Actions=[check])
-   # "Test standard output dump".
-
-% Provided previous tests passed (and good coverage from benchmarks),
-% regression of this test can only fail because of changes in the code
-% that saves tests' standard error to .testout files, and tests
-% effectively that code if the benchmarks provide enough coverage
-:- test run_tests_in_benchmarks(Opts, Actions)
-   : (Opts=[dump_error], Actions=[check])
-   # "Test standard error dump".
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Testing tests results and stats computation and  output:
-
-% Regression on this test can only fail because of changes in the code
-% that shows test results from .testout files, and tests effectively
-% that code if the benchmarks provide enough coverage
-:- test run_tests_in_benchmarks(Opts, Actions)
-   : (Opts=[], Actions=[saved_vers, show_output])
-   # "Test showing saved test results".
-
-% Regression on this test can only fail because of changes in the code
-% that shows test statistics from .testout files, and tests
-% effectively that code if the benchmarks provide enough coverage
-:- test run_tests_in_benchmarks(Opts, Actions)
-   : (Opts=[], Actions=[saved_vers, show_stats])
-   # "Test showing saved test stats".
-
-% Provided previous tests passed (and good coverage from benchmarks),
-% regression of these tests can only fail because of changes in the
-% code that saves tests' results to .testout files, and tests
-% effectively that code if the benchmarks provide enough coverage
-:- test run_tests_in_benchmarks(Opts, Actions)
-   : (Opts=[], Actions=[check, show_output])
-   # "Test showing test results".
-%
-:- test run_tests_in_benchmarks(Opts, Actions)
-   : (Opts=[], Actions=[check, show_stats])
-   # "Test showing test stats".
+   : (Opts=[], Actions=[check, show_results])
+   # "Test showing tests results, stats, and stdout/stderr".
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
@@ -117,7 +64,6 @@ run_tests_in_benchmarks(Opts, Actions) :-
 :- test run_tests_in_benchmarks(Opts, Actions)
    : (Opts=[rtc_entry], Actions=[check, compare])
    # "Test rtc_entry + check + compare".
-
 
 % TODO: we could make a safe bootstrap of the test system if we
 % separate the dynamic compilation. For example including unittest in
