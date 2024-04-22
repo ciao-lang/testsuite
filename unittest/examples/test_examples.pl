@@ -61,16 +61,12 @@ p(h) :- halt(1).                    % rule aborts the execution
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-:- use_module(library(unittest/unittest_props), [times/2]).
-
 % ----------------------------------------------------------------------
 % this set of tests demonstrates the correct and incorrect uses of texec
 % assertions, it only gives examples of passing tests
 %
 :- texec display1(A) : (A = hello)
     # "correct texecassertion, test should pass".
-:- texec display1(A) : (A = hello) + times(1)
-    # "correct texec assertion, test should pass".
 :- texec display1(A) : (A = hello) + user_output("hello")
     # "incorrect texec assertion, test should pass".
 % ----------------------------------------------------------------------
@@ -101,7 +97,7 @@ display_fail(_A) :- display(hello), fail.
 
 :- use_module(library(write), [write/1]).
 
-:- test cut_test5 + (times(3), user_output("Cut disjunction"), fails) #
+:- test cut_test5 + (user_output("Cut disjunction"), fails) #
     "Test OK".
 
 cut_test5 :- (! ; write('No')), write('Cut disjunction'), fail.
@@ -141,7 +137,7 @@ qs(A, A).
 
 :- texec case_tx(A, AB) : (A = a)
      # "test should pass".
-:- texec case_tx(A, AB) : (A = a) + ( times(2), try_sols(2) )
+:- texec case_tx(A, AB) : (A = a) + try_sols(2)
      # "test should pass".
 
 % processing texec as test
