@@ -1,4 +1,0 @@
-test_output_db('ceval2#20#24',st(result_id(1,1,1),[rtcheck(success,ceval(_,A),['A'=cm(3,4)+cm(1,2)-cm(2,3),'B'=c(2,3)],A=cm(2,3),[A=c(2,3)],[asrloc(loc('testsuite/unittest/examples/ceval2.pl',20,24))])],[],rtcheck_error)).
-test_output_error_db('ceval2#20#24',[],[]).
-test_output_db('ceval2#25#28',st(result_id(1,1,1),[],[],true)).
-test_output_error_db('ceval2#25#28',[],[]).

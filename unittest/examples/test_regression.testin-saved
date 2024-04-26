@@ -1,5 +1,0 @@
-test_db('test_regression#19#19',test_regression,p,1,['X'=A],[],::(p(A),=>([]:[A=a],[]+[not_fails(p(A))]#[])),loc('testsuite/unittest/examples/test_regression.pl',19,19)).
-test_db('test_regression#32#32',test_regression,q,1,['X'=A],[],::(q(A),=>([]:[A=b],[]+[not_fails(q(A))]#[])),loc('testsuite/unittest/examples/test_regression.pl',32,32)).
-test_db('test_regression#42#42',test_regression,r,1,['X'=A],[],::(r(A),=>([]:[A=a],[]+[not_fails(r(A))]#[])),loc('testsuite/unittest/examples/test_regression.pl',42,42)).
-test_db('test_regression#47#48',test_regression,s,1,['X'=A],[],::(s(A),=>([]:[A=a],[A=b]+[]#[])),loc('testsuite/unittest/examples/test_regression.pl',47,48)).
-test_db('test_regression#54#55',test_regression,t,2,['X'=A,'Y'=B],[],::(t(A,B),=>([]:[A=a],[B=b]+[]#[])),loc('testsuite/unittest/examples/test_regression.pl',54,55)).

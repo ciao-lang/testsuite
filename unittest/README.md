@@ -1,19 +1,10 @@
-To run tests, follow steps below:
+# Tests for the unit tests
 
-```
-?- use_module(library(unittest)).
-?- run_tests(unittest_tests, [], [check, briefcompare]).
-```
+This directory contains a simple script that runs unit tests over a
+collection of examples and compares the output w.r.t. saved regression
+data. Any difference is reported as a potential error.
 
-You can check the differences with:
+**Note**: Keep this simple and do not rely on unit test library to
+check the unit test library itself.
 
-```
-?- run_tests(unittest_tests, [], [compare]).
-```
-
-To save the current results execute:
-
-```
-?- run_tests(unittest_tests, [], [save]).
-```
 

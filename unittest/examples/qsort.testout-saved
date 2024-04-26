@@ -1,2 +1,0 @@
-test_output_db('qsort#38#39',st(result_id(1,1,1),[rtcheck(success,qsort(_,A),['A'=[5,7,2,4,3],'B'=[7,5,4,3,2]],A=[2,3,4,5,7],[A=[7,5,4,3,2]],[asrloc(loc('testsuite/unittest/examples/qsort.pl',38,39))])],[],rtcheck_error)).
-test_output_error_db('qsort#38#39',[],[]).

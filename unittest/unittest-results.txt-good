@@ -1,0 +1,310 @@
+HAND MADE DIFFERENCE HERE
+{In testsuite/unittest/examples/ceval1.pl
+PASSED: (lns 20-22) ceval/2.
+PASSED: (lns 23-25) ceval/2.
+}
+{In testsuite/unittest/examples/ceval2.pl
+FAILED: (lns 20-24) ceval/2.
+(lns 20-24) ceval(A,B) run-time check failure.
+Requires in *success*: 
+    B=cm(2,3).
+But instead:
+    B=c(2,3)
+PASSED: (lns 25-28) ceval/2.
+}
+{In testsuite/unittest/examples/civil_registry.pl
+PASSED: (lns 34-35) profession/1.
+PASSED: (lns 36-36) profession/1.
+PASSED: (lns 37-37) profession/1.
+PASSED: (lns 43-44) surname/1.
+PASSED: (lns 45-45) surname/1.
+PASSED: (lns 46-46) surname/1.
+PASSED: (lns 52-53) sevillian/1.
+PASSED: (lns 54-54) sevillian/1.
+PASSED: (lns 55-55) sevillian/1.
+PASSED: (lns 56-56) sevillian/1.
+PASSED: (lns 63-64) family_income/1.
+PASSED: (lns 63-64) └── (solution 2) (try_sol limit)
+PASSED: (lns 65-65) family_income/1.
+PASSED: (lns 66-66) family_income/1.
+PASSED: (lns 72-73) married/2.
+PASSED: (lns 74-74) married/2.
+PASSED: (lns 75-75) married/2.
+PASSED: (lns 81-83) salary/2.
+PASSED: (lns 84-85) salary/2.
+PASSED: (lns 86-86) salary/2.
+}
+{In testsuite/unittest/examples/length.pl
+PASSED: (lns 11-12) length/2.
+PASSED: (lns 13-13) length/2.
+PASSED: (lns 14-14) length/2.
+PASSED: (lns 15-15) length/2.
+PASSED: (lns 16-16) length/2.
+PASSED: (lns 17-17) length/2.
+PASSED: (lns 18-18) concat/3.
+PASSED: (lns 19-20) concat/3.
+}
+WARNING: (lns 52-52) unexpected existential variables in the success part of basic_building/1
+WARNING: (lns 53-53) unexpected existential variables in the success part of basic_building/1
+WARNING: (lns 54-54) unexpected existential variables in the success part of basic_building/1
+WARNING: (lns 98-98) unexpected existential variables in the success part of building/1
+WARNING: (lns 99-99) unexpected existential variables in the success part of building/1
+WARNING: (lns 100-100) unexpected existential variables in the success part of building/1
+WARNING: (lns 101-101) unexpected existential variables in the success part of building/1
+WARNING: (lns 102-102) unexpected existential variables in the success part of building/1
+WARNING: (lns 103-103) unexpected existential variables in the success part of building/1
+WARNING: (lns 104-104) unexpected existential variables in the success part of building/1
+WARNING: (lns 105-105) unexpected existential variables in the success part of building/1
+WARNING: (lns 333-334) unexpected existential variables in the success part of average/2
+WARNING: (lns 335-336) unexpected existential variables in the success part of average/2
+{In testsuite/unittest/examples/prolog_course_assignment.pl
+PASSED: (lns 43-44) basic_building/1 "Test 1.1: Un edificio simple.".
+PASSED: (lns 45-45) basic_building/1 "Test 1.2: Se admiten pisos vacíos (1).".
+PASSED: (lns 46-46) basic_building/1 "Test 1.3: Se admiten pisos vacíos (2).".
+PASSED: (lns 47-47) basic_building/1 "Test 1.4: Al menos una vivienda (1).".
+PASSED: (lns 48-48) basic_building/1 "Test 1.5: Al menos una vivienda (2).".
+PASSED: (lns 49-49) basic_building/1 "Test 1.6: Al menos un nivel.".
+PASSED: (lns 50-50) basic_building/1 "Test 1.7: Contenido no permitido".
+PASSED: (lns 51-51) basic_building/1 "Test 1.8: Distinto número de pisos.".
+PASSED: (lns 52-52) basic_building/1 "Test 1.9: Lista cerrada (1).".
+PASSED: (lns 53-53) basic_building/1 "Test 1.10: Lista cerrada (2)".
+PASSED: (lns 54-54) basic_building/1 "Test 1.11: Lista cerrada (3).".
+PASSED: (lns 65-66) level_nats/2.
+PASSED: (lns 67-68) level_nats/2.
+PASSED: (lns 69-69) level_nats/2.
+PASSED: (lns 70-70) level_nats/2.
+PASSED: (lns 71-71) level_nats/2.
+PASSED: (lns 72-72) level_nats/2.
+PASSED: (lns 90-91) building/1 "Test 2.1: Un edificio.".
+PASSED: (lns 92-92) building/1 "Test 2.2: Se admiten pisos vacíos (1).".
+PASSED: (lns 93-93) building/1 "Test 2.3: Se admiten pisos vacíos (2).".
+PASSED: (lns 94-94) building/1 "Test 2.4: Al menos una vivienda (1).".
+PASSED: (lns 95-95) building/1 "Test 2.5: Al menos una vivienda (2).".
+PASSED: (lns 96-96) building/1 "Test 2.6: Al menos un nivel.".
+PASSED: (lns 97-97) building/1 "Test 2.7: Contenido no permitido".
+PASSED: (lns 98-98) building/1 "Test 2.8: Lista cerrada.".
+PASSED: (lns 99-99) building/1 "Test 2.9: Lista cerrada.".
+PASSED: (lns 100-100) building/1 "Test 2.10: Lista cerrada.".
+PASSED: (lns 101-101) building/1 "Test 2.11: Mismo número de viviendas por nivel.".
+PASSED: (lns 102-102) building/1 "Test 2.12: Lista cerrada (1).".
+PASSED: (lns 103-103) building/1 "Test 2.13: Lista cerrada (2).".
+PASSED: (lns 104-104) building/1 "Test 2.14: Generar edificio válido.".
+PASSED: (lns 105-105) building/1 "Test 2.15: Generar al menos 3 edificios válidos.".
+PASSED: (lns 105-105) ├── (solution 2)
+PASSED: (lns 105-105) └── (solution 3) (try_sol limit)
+PASSED: (lns 133-134) level/3 "Test 3.1: Acceder a un nivel (1).".
+PASSED: (lns 135-135) level/3 "Test 3.2: Ver en número de un nivel.".
+PASSED: (lns 136-136) level/3 "Test 3.3: Acceder a un nivel (2).".
+PASSED: (lns 137-137) level/3 "Test 3.4: Al menos un nivel.".
+PASSED: (lns 138-138) level/3 "Test 3.5: Acceder a un nivel que no existe (1).".
+PASSED: (lns 139-139) level/3 "Test 3.6: No se admiten edificios sin niveles.".
+PASSED: (lns 140-141) level/3 "Test 3.7: Acceder a un nivel que no existe (2).".
+PASSED: (lns 142-142) level/3 "Test 3.8: Acceder a un nivel (3).".
+PASSED: (lns 171-172) column/3 "Test 4.1: Seleccionar una columna (1).".
+PASSED: (lns 173-173) column/3 "Test 4.2: Seleccionar una columna (2).".
+PASSED: (lns 174-174) column/3 "Test 4.3: Se accede a una columna que no existe (1).".
+PASSED: (lns 175-175) column/3 "Test 4.4: Se accede a una columna que no existe (2).".
+PASSED: (lns 176-176) column/3 "Test 4.5: El edificio no puede estar vacío.".
+PASSED: (lns 177-177) column/3 "Test 4.6: Se accede a una columna que no existe (3).".
+PASSED: (lns 178-178) column/3 "Test 4.7: Seleccionar una columna (3).".
+PASSED: (lns 179-179) column/3 "Test 4.8: Se accede a una columna que no existe (4).".
+PASSED: (lns 180-180) column/3 "Test 4.9: Se accede a una columna que no existe (5).".
+PASSED: (lns 207-208) columns/2 "Test 5.1: Obtener todas las columnas (1).".
+PASSED: (lns 209-209) columns/2 "Test 5.2: Obtener todas las columnas (2).".
+PASSED: (lns 210-210) columns/2 "Test 5.3: El edificio no puede estar vacío.".
+PASSED: (lns 211-211) columns/2 "Test 5.4: Obtener todas las columnas (3).".
+PASSED: (lns 212-212) columns/2 "Test 5.5: Obtener todas las columnas (4).".
+PASSED: (lns 213-213) columns/2 "Test 5.6: Obtener todas las columnas (5).".
+PASSED: (lns 214-214) columns/2 "Test 5.7: Obtener todas las columnas (6).".
+PASSED: (lns 215-215) columns/2 "Test 5.8: Obtener todas las columnas (7).".
+PASSED: (lns 216-216) columns/2 "Test 5.9: Obtener todas las columnas (8).".
+PASSED: (lns 217-217) columns/2 "Test 5.10: Mismo número de viviendas por nivel.".
+PASSED: (lns 252-254) total_people/2 "Test 6.1: Número incorrecto de personas.".
+PASSED: (lns 255-256) total_people/2 "Test 6.2: Edificio sin personas.".
+PASSED: (lns 257-258) total_people/2 "Test 6.3: Al menos una vivienda.".
+PASSED: (lns 259-260) total_people/2 "Test 6.4: Calcular número de personas (1).".
+PASSED: (lns 261-262) total_people/2 "Test 6.5: Mismo número de viviendas por nivel.".
+PASSED: (lns 263-264) total_people/2 "Test 6.6: Contenido incorrecto en nivel.".
+PASSED: (lns 265-266) total_people/2 "Test 6.7: Detectar número incorrecto de personas.".
+PASSED: (lns 267-268) total_people/2 "Test 6.8: Calcular número de personas (2).".
+PASSED: (lns 308-310) average/2 "Test 7.1: No hay nadie.".
+PASSED: (lns 311-312) average/2 "Test 7.2: Nivel vacío.".
+PASSED: (lns 313-314) average/2 "Test 7.3: Calcular una media.".
+PASSED: (lns 315-316) average/2 "Test 7.4: Calcular una media.".
+PASSED: (lns 317-318) average/2 "Test 7.5: Calcular una media.".
+PASSED: (lns 319-320) average/2 "Test 7.6: Calcular una media.".
+PASSED: (lns 321-322) average/2 "Test 7.7: Calcular una media.".
+PASSED: (lns 323-324) average/2 "Test 7.8: Calcular una media.".
+PASSED: (lns 325-326) average/2 "Test 7.9: Calcular una media.".
+PASSED: (lns 327-328) average/2 "Test 7.10: Calcular una media.".
+PASSED: (lns 329-330) average/2 "Test 7.11: Calcular una media.".
+PASSED: (lns 331-332) average/2 "Test 7.12: Calcular una media.".
+PASSED: (lns 333-334) average/2 "Test 7.13: Backwards for det avg.".
+PASSED: (lns 335-336) average/2 "Test 7.14: Backwards for det avg.".
+}
+{In testsuite/unittest/examples/qsort.pl
+FAILED: (lns 38-39) qsort/2.
+(lns 38-39) qsort(A,B) run-time check failure.
+Requires in *success*: 
+    B=[2,3,4,5,7].
+But instead:
+    B=[7,5,4,3,2]
+}
+{In testsuite/unittest/examples/relationships.pl
+PASSED: (lns 34-36) fsb/2.
+FAILED: (lns 37-37) fsb/2.
+(lns 37-37) fsb(A,B) run-time check failure.
+Requires: 
+    not_fails.
+But instead:
+    fails
+FAILED: (lns 38-38) fsb/2.
+(lns 38-38) fsb(A,B) run-time check failure.
+Requires: 
+    fails.
+But instead:
+    succeeds
+FAILED: (lns 39-39) fsb/2.
+(lns 39-39) fsb(A,B) run-time check failure.
+Requires: 
+    not_fails.
+But instead:
+    fails
+FAILED: (lns 40-40) brother/2.
+(lns 40-40) brother(A,B) run-time check failure.
+Requires: 
+    not_fails.
+But instead:
+    fails
+}
+{In testsuite/unittest/examples/test_benchs.pl
+ABORTED: (lns 2-11) p/1. Time limit for the test exceeded.
+ABORTED: (lns 18-20) r/1. Time limit for the test exceeded.
+ABORTED: (lns 23-25) p/1. Time limit for the test exceeded.
+ABORTED: (lns 26-26) p/1. Time limit for the test exceeded.
+ABORTED: (lns 27-27) s/1. Time limit for the test exceeded.
+}
+{In testsuite/unittest/examples/test_examples.pl
+WARNING: (lns 70-71) texec assertion for display1/1 can have only unit test commands, not comp properties: 
+[user_output([104,101,108,108,111])]
+Processing it as a test assertion
+}
+
+{In testsuite/unittest/examples/test_examples.pl
+WARNING: (lns 142-146) texec assertion for case_tx/2 can have only unit test commands, not comp properties: 
+[is_det]
+Processing it as a test assertion
+}
+
+{In testsuite/unittest/examples/test_examples.pl
+WARNING: (lns 147-148) texec assertion for case_tx/2 can have only unit test commands, not comp properties: 
+[non_det]
+Processing it as a test assertion
+}
+
+{In testsuite/unittest/examples/test_examples.pl
+WARNING: (lns 17-24) p/1 "test should pass". There were exceptions, but test does not specify exceptions behavior.
+WARNING: (lns 25-26) p/1 "test should fail (precondition)". Nothing tested because generation from calls field failed.
+ABORTED: (lns 27-28) p/1 "test should fail (throws exception in precondition)". Nothing tested because generation from calls field aborted.
+ABORTED: (lns 29-30) p/1 "test should abort". Predicate under test aborted.
+PASSED: (lns 31-36) p/1 "test should pass".
+PASSED: (lns 37-38) p/1 "test should pass".
+PASSED: (lns 39-40) p/1 "test should pass".
+FAILED: (lns 41-42) p/1 "test should fail".
+(lns 41-42) p(A) run-time check failure.
+Requires: 
+    no_exception.
+But instead:
+    exception(error(c,'error c'))
+FAILED: (lns 43-44) p/1 "test should fail".
+(lns 43-44) p(A) run-time check failure.
+Requires: 
+    not_fails.
+But instead:
+    exception(error(c,'error c'))
+FAILED: (lns 45-49) p/1.
+(lns 45-49) p(Z) run-time check failure.
+Requires in *success*: 
+    Z=d.
+But instead:
+    Z=a
+PASSED: (lns 60-69) display1/1 "correct texecassertion, test should pass".
+Note: stdout in test
+hello
+PASSED: (lns 70-71) display1/1 "incorrect texec assertion, test should pass".
+Note: stdout in test
+hello
+PASSED: (lns 72-78) display1/1 "test should pass".
+Note: stdout in test
+hello
+FAILED: (lns 79-80) display1/1 "test should fail".
+(lns 79-80) display1(A) run-time check failure.
+Requires: 
+    user_output([98,121,101]).
+But instead:
+    user_output([104,101,108,108,111])
+Note: stdout in test
+hello
+PASSED: (lns 84-87) display_fail/0 "Test OK".
+Note: stdout in test
+hello
+PASSED: (lns 99-101) cut_test5/0 "Test OK".
+Note: stdout in test
+Cut disjunction
+FAILED: (lns 104-110) call_test10/1 "Wrong test".
+(lns 104-110) call_test10(X) run-time check failure.
+Requires: 
+    exception(error(type_error(callable,1),'in metacall')).
+But instead:
+    exception(error(existence_error(procedure,'test_examples_wrp_auto:write'/1),'test_examples_wrp_auto:write'/1))
+(lns 104-110) call_test10(X) run-time check failure.
+Requires: 
+    user_output([111,117,116,112,117,116]).
+But instead:
+    user_output([])
+Note: stderr in test
+WARNING: Predicate write/1 undefined in module test_examples_wrp_auto
+PASSED: (lns 135-139) case_tx/2 "test should pass".
+PASSED: (lns 135-139) └── (solution 2) (try_sol limit)
+PASSED: (lns 140-141) case_tx/2 "test should pass".
+PASSED: (lns 140-141) └── (solution 2) (try_sol limit)
+PASSED: (lns 142-146) case_tx/2 "test should fail, bug: true&false test".
+FAILED: (lns 142-146) └── (solution 2) (try_sol limit)
+(lns 142-146) case_tx(A,AB) run-time check failure.
+Requires: 
+    is_det.
+But instead:
+    non_det
+PASSED: (lns 147-148) case_tx/2 "test should pass".
+PASSED: (lns 147-148) └── (solution 2) (try_sol limit)
+PASSED: (lns 158-160) case_ts/2 "test should pass".
+PASSED: (lns 158-160) └── (solution 2) (try_sol limit)
+PASSED: (lns 161-162) case_ts/2 "test should pass".
+PASSED: (lns 163-164) case_ts/2 "test should pass".
+FAILED: (lns 165-166) case_ts/2 "test should fail".
+(lns 165-166) case_ts(X,Y) run-time check failure.
+Requires in *success*: 
+    Y=b.
+But instead:
+    Y=a
+PASSED: (lns 167-168) case_ts/2 "test should pass".
+}
+{In testsuite/unittest/examples/test_regression.pl
+PASSED: (lns 19-19) p/1.
+Note: stdout in test
+running(a)
+PASSED: (lns 32-32) q/1.
+Note: stderr in test
+running(b)
+PASSED: (lns 42-42) r/1.
+FAILED: (lns 47-48) s/1.
+(lns 47-48) s(X) run-time check failure.
+Requires in *success*: 
+    X=b.
+But instead:
+    X=a
+WARNING: (lns 54-55) t/2. Goal tested failed, but test does not specify failure behavior.
+}
+Note: {Total:
+Passed: 132 (85.16%) Failed: 14 (9.03%) Precond Failed: 1 (0.65%) Aborted: 3 (1.94%) Timeouts: 5 (3.23%) Total: 155 Run-Time Errors: 15
+}

@@ -1,4 +1,0 @@
-test_output_db('ceval1#20#22',st(result_id(1,1,1),[],[],true)).
-test_output_error_db('ceval1#20#22',[],[]).
-test_output_db('ceval1#23#25',st(result_id(1,1,1),[],[],true)).
-test_output_error_db('ceval1#23#25',[],[]).

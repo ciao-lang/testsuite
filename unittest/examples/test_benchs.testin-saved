@@ -1,6 +1,0 @@
-test_db('test_benchs#2#11',test_benchs,p,1,['X'=A],[timeout(p(A),100)],::(p(A),=>([]:[],[]+[]#[])),loc('testsuite/unittest/examples/test_benchs.pl',2,11)).
-test_db('test_benchs#13#15',test_benchs,q,1,['X'=A],[timeout(q(A),100)],::(q(A),=>([]:[gen(A)],[]+[]#[])),loc('testsuite/unittest/examples/test_benchs.pl',13,15)).
-test_db('test_benchs#18#20',test_benchs,r,1,['X'=A],[timeout(r(A),100)],::(r(A),=>([]:[],[post(A)]+[]#[])),loc('testsuite/unittest/examples/test_benchs.pl',18,20)).
-test_db('test_benchs#23#25',test_benchs,p,1,['X'=A],[timeout(p(A),100)],::(p(A),=>([]:[],[]+[not_fails(p(A))]#[])),loc('testsuite/unittest/examples/test_benchs.pl',23,25)).
-test_db('test_benchs#26#26',test_benchs,p,1,['X'=A],[timeout(p(A),100)],::(p(A),=>([]:[],[post(A)]+[no_exception(p(A))]#[])),loc('testsuite/unittest/examples/test_benchs.pl',26,26)).
-test_db('test_benchs#27#27',test_benchs,s,1,['X'=A],[timeout(s(A),100)],::(s(A),=>([]:[],[]+[exception(s(A),my_exception)]#[])),loc('testsuite/unittest/examples/test_benchs.pl',27,27)).

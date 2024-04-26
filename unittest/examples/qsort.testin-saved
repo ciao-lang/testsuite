@@ -1,1 +1,0 @@
-test_db('qsort#38#39',qsort,qsort,2,['A'=A,'B'=B],[],::(qsort(A,B),=>([]:[A=[5,7,2,4,3]],[B=[2,3,4,5,7]]+[]#[])),loc('testsuite/unittest/examples/qsort.pl',38,39)).

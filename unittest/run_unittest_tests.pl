@@ -2,11 +2,8 @@
 % -*- mode: ciao; -*-
 
 :- use_module(library(unittest), [run_tests/3]).
+:- use_module(library(bundle/bundle_paths), [bundle_path/3]).
 
-main(_) :- % run from this module's directory
-    run_tests(unittest_tests, [], [check, briefcompare(Result)]),
-    ( Result=0 ->
-        true 
-    ; run_tests(unittest_tests, [], [compare]),
-      halt(1)
-    ).
+main(_) :-
+    bundle_path(testsuite, 'unittest/examples', AbsDir),
+    run_tests(AbsDir, [dir_rec], [check, show_results]).
