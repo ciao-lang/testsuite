@@ -2,7 +2,7 @@
 % A testsuite for Ciao
 version('1.23.0'). % (same as 'core')
 depends([
-  ciaodbg
+  ciaodbg_extra
 ]).
 alias_paths([
   testsuite_ecrc = ecrc,
