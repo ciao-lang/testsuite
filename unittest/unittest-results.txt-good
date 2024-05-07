@@ -178,6 +178,7 @@ But instead:
 }
 {In testsuite/unittest/examples/test_benchs.pl
 ABORTED: (lns 2-11) p/1. Time limit for the test exceeded.
+ABORTED: (lns 13-15) q/1. Nothing tested because generation from calls field aborted.
 ABORTED: (lns 18-20) r/1. Time limit for the test exceeded.
 ABORTED: (lns 23-25) p/1. Time limit for the test exceeded.
 ABORTED: (lns 26-26) p/1. Time limit for the test exceeded.
