@@ -43,19 +43,17 @@ PASSED: (lns 17-17) length/2.
 PASSED: (lns 18-18) concat/3.
 PASSED: (lns 19-20) concat/3.
 }
-WARNING: (lns 52-52) unexpected existential variables in the success part of basic_building/1
-WARNING: (lns 53-53) unexpected existential variables in the success part of basic_building/1
-WARNING: (lns 54-54) unexpected existential variables in the success part of basic_building/1
-WARNING: (lns 98-98) unexpected existential variables in the success part of building/1
-WARNING: (lns 99-99) unexpected existential variables in the success part of building/1
-WARNING: (lns 100-100) unexpected existential variables in the success part of building/1
-WARNING: (lns 101-101) unexpected existential variables in the success part of building/1
-WARNING: (lns 102-102) unexpected existential variables in the success part of building/1
-WARNING: (lns 103-103) unexpected existential variables in the success part of building/1
-WARNING: (lns 104-104) unexpected existential variables in the success part of building/1
-WARNING: (lns 105-105) unexpected existential variables in the success part of building/1
-WARNING: (lns 333-334) unexpected existential variables in the success part of average/2
-WARNING: (lns 335-336) unexpected existential variables in the success part of average/2
+WARNING: (lns 52-52) unexpected existential variables (shared in the calls and success parts and not appearing in the head) in test assertion for basic_building/1
+WARNING: (lns 53-53) unexpected existential variables (shared in the calls and success parts and not appearing in the head) in test assertion for basic_building/1
+WARNING: (lns 54-54) unexpected existential variables (shared in the calls and success parts and not appearing in the head) in test assertion for basic_building/1
+WARNING: (lns 98-98) unexpected existential variables (shared in the calls and success parts and not appearing in the head) in test assertion for building/1
+WARNING: (lns 99-99) unexpected existential variables (shared in the calls and success parts and not appearing in the head) in test assertion for building/1
+WARNING: (lns 100-100) unexpected existential variables (shared in the calls and success parts and not appearing in the head) in test assertion for building/1
+WARNING: (lns 101-101) unexpected existential variables (shared in the calls and success parts and not appearing in the head) in test assertion for building/1
+WARNING: (lns 102-102) unexpected existential variables (shared in the calls and success parts and not appearing in the head) in test assertion for building/1
+WARNING: (lns 103-103) unexpected existential variables (shared in the calls and success parts and not appearing in the head) in test assertion for building/1
+WARNING: (lns 333-334) unexpected existential variables (shared in the calls and success parts and not appearing in the head) in test assertion for average/2
+WARNING: (lns 335-336) unexpected existential variables (shared in the calls and success parts and not appearing in the head) in test assertion for average/2
 {In testsuite/unittest/examples/prolog_course_assignment.pl
 PASSED: (lns 43-44) basic_building/1 "Test 1.1: Un edificio simple.".
 PASSED: (lns 45-45) basic_building/1 "Test 1.2: Se admiten pisos vacíos (1).".
@@ -184,24 +182,15 @@ ABORTED: (lns 23-25) p/1. Time limit for the test exceeded.
 ABORTED: (lns 26-26) p/1. Time limit for the test exceeded.
 ABORTED: (lns 27-27) s/1. Time limit for the test exceeded.
 }
-{In testsuite/unittest/examples/test_examples.pl
 WARNING: (lns 70-71) texec assertion for display1/1 can have only unit test commands, not comp properties: 
 [user_output([104,101,108,108,111])]
 Processing it as a test assertion
-}
-
-{In testsuite/unittest/examples/test_examples.pl
 WARNING: (lns 142-146) texec assertion for case_tx/2 can have only unit test commands, not comp properties: 
 [is_det]
 Processing it as a test assertion
-}
-
-{In testsuite/unittest/examples/test_examples.pl
 WARNING: (lns 147-148) texec assertion for case_tx/2 can have only unit test commands, not comp properties: 
 [non_det]
 Processing it as a test assertion
-}
-
 {In testsuite/unittest/examples/test_examples.pl
 WARNING: (lns 17-24) p/1 "test should pass". There were exceptions, but test does not specify exceptions behavior.
 WARNING: (lns 25-26) p/1 "test should fail (precondition)". Nothing tested because generation from calls field failed.
