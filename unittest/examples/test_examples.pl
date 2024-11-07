@@ -109,7 +109,7 @@ cut_test5 :- (! ; write('No')), write('Cut disjunction'), fail.
         exception(error(type_error(callable, 1), 'in metacall')) )
 # "Wrong test".
 
-:- meta_predicate call_test10(goal).
+%:- meta_predicate call_test10(goal). % (no metapred here!)
 
 call_test10(X) :- call(X).
 

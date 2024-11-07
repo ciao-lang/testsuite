@@ -232,16 +232,11 @@ Cut disjunction
 FAILED: (lns 104-110) call_test10/1 "Wrong test".
 (lns 104-110) call_test10(X) run-time check failure.
 Requires: 
-    exception(error(type_error(callable,1),'in metacall')).
-But instead:
-    exception(error(existence_error(procedure,'test_examples_wrp_auto:write'/1),'test_examples_wrp_auto:write'/1))
-(lns 104-110) call_test10(X) run-time check failure.
-Requires: 
     user_output([111,117,116,112,117,116]).
 But instead:
-    user_output([])
-Note: stderr in test
-WARNING: Predicate write/1 undefined in module test_examples_wrp_auto
+    user_output([51])
+Note: stdout in test
+3
 PASSED: (lns 135-139) case_tx/2 "test should pass".
 PASSED: (lns 135-139) └── (solution 2) (try_sol limit)
 PASSED: (lns 140-141) case_tx/2 "test should pass".
@@ -284,5 +279,5 @@ But instead:
 WARNING: (lns 54-55) t/2. Goal tested failed, but test does not specify failure behavior.
 }
 Note: {Total:
-Passed: 132 (85.16%) Failed: 14 (9.03%) Precond Failed: 1 (0.65%) Aborted: 3 (1.94%) Timeouts: 5 (3.23%) Total: 155 Run-Time Errors: 15
+Passed: 132 (85.16%) Failed: 14 (9.03%) Precond Failed: 1 (0.65%) Aborted: 3 (1.94%) Timeouts: 5 (3.23%) Total: 155 Run-Time Errors: 14
 }
